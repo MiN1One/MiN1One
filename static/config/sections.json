@@ -1,0 +1,47 @@
+{
+  "home": {
+    "title": "General",
+    "value": "home",
+    "expandedTitle": "General Information",
+    "url": null,
+    "subtitle": "",
+    "info": "",
+    "slide": true
+  },
+  "skills": {
+    "title": "Skills",
+    "value": "skills",
+    "expandedTitle": "My Skills",
+    "url": null,
+    "subtitle": "Just highlighted skills😎",
+    "info": "Technical skills acquired since January 2020. Scroll down for more.",
+    "slide": true
+  },
+  "experienceAndEdu": {
+    "title": "Experience & Education",
+    "value": "experienceAndEdu",
+    "expandedTitle": "Work Experience & Educational background",
+    "url": null,
+    "subtitle": "My work experience and training (2019 - 2023)🗂️",
+    "info": "",
+    "slide": true
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "value": "portfolio",
+    "expandedTitle": "Masterpieces",
+    "url": null,
+    "subtitle": "Highlighted projects🎨",
+    "info": "Not all the projects I've worked on are listed here. Company projects are not disclosed due to non-disclosure agreements (NDA).",
+    "slide": true
+  },
+  "contact": {
+    "title": "Contact",
+    "value": "contact",
+    "expandedTitle": "Contact anytime",
+    "url": null,
+    "subtitle": "Need help? You can contact me via email or social media☎️",
+    "info": "",
+    "slide": false
+  }
+}

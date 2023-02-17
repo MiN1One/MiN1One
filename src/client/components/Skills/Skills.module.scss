@@ -1,0 +1,205 @@
+@use '../../sass/mixins' as *;
+
+.skills {
+
+  .list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 4.5rem;
+    column-gap: 4rem;
+
+    @include respond('desktop') {
+      row-gap: 3rem;
+      column-gap: 2rem;
+    }
+
+    @include respond('tablet') {
+      column-gap: 1rem;
+    }
+
+    @include respond('mid') {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .item {
+    color: var(--color-light);
+    font-size: 1.3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    &.js svg {
+      fill: var(--color-primary);
+    }
+
+    &.ts svg {
+      fill: var(--color-secondary);
+    }
+
+    &.react-next svg {
+      fill: #00d1f7;
+    }
+
+    &.node svg {
+      fill: #7dbb45
+    }
+
+    &.nest svg {
+      fill: #e32743;
+    }
+
+    &.mongo-goose svg {
+      fill: #4caa3d;
+    }
+
+    &.shopify svg {
+      fill: #90b945;
+    }
+
+    &.redux-zustand svg {
+      fill: #7248b6;
+    }
+
+    &.webpack svg {
+      fill: #8acef2;
+    }
+
+    &.sass svg {
+      fill: #c76494;
+    }
+  }
+
+  .label {
+    font-size: 2rem;
+    margin-right: .65rem;
+  }
+
+  .itemHead {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .titleGroup {
+    display: flex;
+    align-items: center;
+    margin-bottom: .5rem;
+  }
+
+  .itemBody {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    width: 100%;
+
+    @include respond('sm') {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  .list:not(.lingual) .itemBody svg {
+    @include respond('sm') {
+      display: none;
+    }
+  }
+
+  svg:not(svg.linkIcon) {
+    margin-right: 2.5rem;
+    width: 4.5rem;
+    height: 4.5rem;
+
+    @include respond('sm') {
+      margin-right: 0;
+      margin-bottom: 1rem;
+      width: 6rem;
+      height: 6rem;
+    }
+  }
+
+  .item .itemHead .linkIcon { fill: none; }
+
+  .bodyGroup {
+    display: flex;
+    align-items: center;
+    width: 85%;
+
+    @include respond('sm') {
+      width: 100%;
+    }
+  }
+
+  .progress {
+    height: 1.5rem;
+    background: var(--color-grey-opaque);
+    width: 60%;
+    flex-shrink: 1;
+    position: relative;
+    margin-right: 3rem;
+
+    @include respond('sm') {
+      width: 70%;
+      margin-right: 1.5rem;
+    }
+
+    span {
+      z-index: 1;
+      background: var(--color-success);
+      opacity: .8;
+      box-shadow: 0 0 1rem var(--color-success-opaque);
+    }
+
+    span,
+    span::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+    }
+
+    span::after {
+      content: "";
+      z-index: 2;
+      background: url('../../../../static/images/dot.png');
+      width: 100%;
+    }
+  }
+
+  &.active .progress span {
+    width: var(--level);
+    animation-delay: calc(var(--slide-transition-duration) + .2s);
+    animation-timing-function: ease;
+    animation-duration: 1s;
+    animation-fill-mode: backwards;
+    animation-name: extend;
+  }
+
+  .level {
+    width: 10rem;
+    flex-shrink: 0;
+
+    @include respond('sm') {
+      width: max-content;
+    }
+  }
+
+  .body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .lingual {
+    grid-template-columns: repeat(3, 1fr);
+
+    @include respond('tablet') {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+@keyframes extend {
+  from { width: 0; }
+  to { width: var(--level); }
+}

@@ -1,0 +1,35 @@
+{
+  "llama": {
+    "company": "Llama Commerce LLC",
+    "value": "llama",
+    "from": "2021-06-30T19:00:00.000Z",
+    "to": null,
+    "responsibilities": "Developing and maintaining Shopify based online stores. Store Customizations. Third-party service integrations. Creating responsive UIs modular components. Developing web and Shopify applications. Creating project workflows, scripts and setting up CI/CD. Analyzing and Optimizing product performance, structure and design. Estimating and setting right deadlines. Assisting newcomer developers in getting started with company tech-stack.",
+    "role": "JavaScript Engineer",
+    "location": "Tashkent, Uzbekistan",
+    "mode": "remote",
+    "website": "llamacommerce.io"
+  },
+  "epam": {
+    "company": "Epam Systems",
+    "value": "epam",
+    "from": "2021-06-30T19:00:00.000Z",
+    "to": "2021-07-31T19:00:00.000Z",
+    "responsibilities": "Took part in teamwork. Learnt basics of NestJs and practiced git commands and workflows. Was assigned to complete a project with required technologies that have to be learnt in the process of development.",
+    "role": "JavaScript Developer Intern",
+    "location": "Tashkent, Uzbekistan",
+    "mode": "remote",
+    "website": "epam.com"
+  },
+  "freelance": {
+    "company": "Freelance",
+    "value": "freelance",
+    "from": "2020-11-30T19:00:00.000Z",
+    "to": "2021-05-31T19:00:00.000Z",
+    "responsibilities": "Developing MVPs. Laying out front-end of online stores and web applications using latest web technologies. Understaning client needs &proposing project plans and appropriate tech solutions.",
+    "role": "Web Developer",
+    "location": "Tashkent, Uzbekistan",
+    "mode": "hybrid",
+    "website": null
+  }
+}

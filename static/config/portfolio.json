@@ -1,0 +1,110 @@
+{
+  "w180gradus": {
+    "title": "180Gradus",
+    "link": null,
+    "github": {
+      "link": "https://github.com/MiN1One/180-gradus-api",
+      "repo": "180-gradus-api"
+    },
+    "year": 2021,
+    "technologies": [],
+    "type": "full-stack",
+    "value": "w180gradus",
+    "description": "",
+    "images": [
+      "/static/images/jpg/project_image_1.jpg",
+      "/static/images/jpg/project_image_2.jpg",
+      "/static/images/jpg/project_image_3.jpg",
+      "/static/images/jpg/project_image_4.jpg",
+      "/static/images/jpg/project_image_5-mobile.jpg",
+      "/static/images/jpg/project_image_6-mobile.jpg",
+      "/static/images/jpg/project_image_7-mobile.jpg"
+    ],
+    "forSale": true
+  },
+  "weather-exp": {
+    "title": "Weather App",
+    "link": null,
+    "github": {
+      "link": "https://github.com/MiN1One/weather-experimental",
+      "repo": "weather-experimental"
+    },
+    "year": 2020,
+    "technologies": [],
+    "type": "full-stack",
+    "value": "weather-exp",
+    "description": "",
+    "images": [
+      "/static/images/jpg/project_image_15.jpg",
+      "/static/images/jpg/project_image_16.jpg",
+      "/static/images/jpg/project_image_17-mobile.jpg",
+      "/static/images/jpg/project_image_18.jpg"
+    ],
+    "forSale": true
+  },
+  "weather-exp-react": {
+    "title": "Weather App React",
+    "link": null,
+    "github": {
+      "link": "https://github.com/MiN1One/weather-exp-react",
+      "repo": "weather-exp-react"
+    },
+    "year": 2020,
+    "technologies": [],
+    "type": "front-end",
+    "value": "weather-exp-react",
+    "description": "",
+    "images": [
+      "/static/images/jpg/project_image_20.jpg",
+      "/static/images/jpg/project_image_21.jpg",
+      "/static/images/jpg/project_image_22.jpg",
+      "/static/images/jpg/project_image_23-mobile.jpg",
+      "/static/images/jpg/project_image_24-mobile.jpg"
+    ],
+    "forSale": true
+  },
+  "holis": {
+    "title": "Holis Housing",
+    "link": null,
+    "github": {
+      "link": "https://github.com/MiN1One/housing-api",
+      "repo": "housing-api"
+    },
+    "year": 2020,
+    "technologies": [],
+    "type": "full-stack",
+    "value": "holis",
+    "description": "",
+    "images": [
+      "/static/images/jpg/project_image_26.jpg",
+      "/static/images/jpg/project_image_25.jpg",
+      "/static/images/jpg/project_image_27.jpg",
+      "/static/images/jpg/project_image_28.jpg",
+      "/static/images/jpg/project_image_29.jpg",
+      "/static/images/jpg/project_image_30.jpg"
+    ],
+    "forSale": true
+  },
+  "sbuy": {
+    "title": "Sbuy Marketplace",
+    "link": null,
+    "github": {
+      "link": "https://github.com/MiN1One/sbuy",
+      "repo": "sbuy"
+    },
+    "year": 2021,
+    "technologies": [],
+    "type": "front-end",
+    "value": "sbuy",
+    "description": "",
+    "images": [
+      "/static/images/jpg/project_image_31.jpg",
+      "/static/images/jpg/project_image_32.jpg",
+      "/static/images/jpg/project_image_33.jpg",
+      "/static/images/jpg/project_image_34-mobile.jpg",
+      "/static/images/jpg/project_image_35-mobile.jpg",
+      "/static/images/jpg/project_image_36-mobile.jpg"
+    ],
+    "forSale": true
+  }
+}

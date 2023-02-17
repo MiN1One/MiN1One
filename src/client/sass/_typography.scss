@@ -1,0 +1,97 @@
+@use './mixins' as *;
+
+.heading {
+  font-size: 6rem;
+  font-weight: 600;
+  color: var(--color-light);
+
+  @include respond('desktop') {
+    font-size: 4.5rem;
+  }
+
+  &--f-2 {
+    font-family: var(--font-secondary);
+  }
+
+  &--secondary {
+    font-size: 4rem;
+
+    @include respond('desktop') {
+      font-size: 3.25rem;
+    }
+  }
+
+  &--tertiary {
+    font-size: 3rem;
+
+    @include respond('desktop') {
+      font-size: 2.5rem;
+    }
+  }
+
+  &--5 {
+    font-size: 2rem;
+  }
+
+  &--5,
+  &--6 {
+    font-weight: 500;
+  }
+
+  &--6 {
+    font-size: 1.7rem;
+  }
+
+  &--tertiary,
+  &--secondary {
+    font-weight: 500;
+  }
+}
+
+.text {
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: var(--color-light);
+  line-height: 2.25rem;
+  letter-spacing: .75px;
+
+  &--center {
+    text-align: center;
+  }
+
+  &--sm {
+    font-size: 1.2rem;
+  }
+
+  &--lg {
+    font-size: 1.6rem;
+  }
+
+  &--xl {
+    font-size: 1.75rem;
+  }
+
+  &--2xl {
+    font-size: 2rem;
+  }
+
+  &--mid {
+    font-size: 1.45rem;
+  }
+
+  &--end {
+    text-align: end;
+  }
+
+  &--italic {
+    font-style: italic;
+  }
+
+  &--sub {
+    color: var(--color-grey);
+  }
+}
+
+.text .icon {
+  font-size: 2rem;
+}

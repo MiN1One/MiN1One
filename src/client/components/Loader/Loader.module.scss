@@ -1,0 +1,49 @@
+@use '../../sass/mixins' as *;
+
+.loader {
+  width: 100%;
+  height: 100vh;
+  background: var(--bg-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  .label {
+    margin-bottom: 2rem;
+  }
+
+  .progress {
+    width: 40rem;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    font-size: 1.65rem;
+    color: var(--color-light);
+    position: relative;
+
+    @include respond('xs') {
+      width: 30rem;
+    }
+  }
+  
+  .indicator {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    width: 95%;
+    overflow: hidden;
+    animation: progress 4s linear;
+    display: inline-block;
+  }
+
+  .text {
+    position: absolute;
+    bottom: 6rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+}

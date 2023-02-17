@@ -1,0 +1,107 @@
+{
+  "technical": {
+    "title": "Technical mastery:",
+    "list": {
+      "js": {
+        "title": "JavaScript",
+        "value": "js",
+        "type": "lang",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+        "level": 9
+      },
+      "ts": {
+        "title": "TypeScript",
+        "value": "ts",
+        "type": "lang",
+        "url": "https://www.typescriptlang.org/docs/",
+        "level": 8
+      },
+      "node": {
+        "title": "NodeJs",
+        "value": "node",
+        "type": "env",
+        "url": "https://nodejs.org/en/docs/",
+        "level": 8
+      },
+      "react-next": {
+        "title": "ReactJs & NextJs",
+        "value": "react-next",
+        "type": "framework",
+        "url": "https://reactjs.org/docs/getting-started.html",
+        "level": 10
+      },
+      "nest": {
+        "title": "NestJs",
+        "value": "nest",
+        "type": "framework",
+        "url": "https://docs.nestjs.com/",
+        "level": 9
+      },
+      "express": {
+        "title": "ExpressJs",
+        "value": "express",
+        "type": "framework",
+        "url": "https://expressjs.com/",
+        "level": 9
+      },
+      "mongo-goose": {
+        "title": "MongoDB & Mongoose",
+        "value": "mongo-goose",
+        "type": "db",
+        "url": "https://www.mongodb.com/docs/",
+        "level": 8.5
+      },
+      "shopify": {
+        "title": "Shopify  & Shopify Plus",
+        "value": "shopify",
+        "type": "platform",
+        "url": "https://shopify.dev/api",
+        "level": 8.5
+      },
+      "redux-zustand": {
+        "title": "Redux & Zustand",
+        "value": "redux-zustand",
+        "type": "framework",
+        "url": "https://redux.js.org/usage/",
+        "level": 8
+      },  
+      "webpack": {
+        "title": "Webpack 4/5",
+        "value": "webpack",
+        "type": "bundler",
+        "url": "https://webpack.js.org/concepts/",
+        "level": 8
+      },
+      "sass": {
+        "title": "SASS | SCSS",
+        "value": "sass",
+        "type": "preprocessor",
+        "url": "https://sass-lang.com/documentation/",
+        "level": 9.5
+      }
+    }
+  },
+  "lingual": {
+    "title": "Lingual mastery:",
+    "list": {
+      "en": {
+        "title": "English",
+        "value": "en",
+        "proficiency": "advanced",
+        "level": "C1"
+      },
+      "ru": {
+        "title": "Russian",
+        "value": "ru",
+        "proficiency": "upper-intermediate",
+        "level": "B2"
+      },
+      "uz": { 
+        "title": "Uzbek",
+        "value": "uz",
+        "proficiency": "native",
+        "level": null
+      }
+    }
+  }
+}

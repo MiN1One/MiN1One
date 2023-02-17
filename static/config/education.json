@@ -1,0 +1,15 @@
+{
+  "webster": {
+    "classification": "higher",
+    "grade": 4,
+    "gpa": null,
+    "startDate": "2019-07-31T19:00:00.000Z",
+    "endDate": "2023-04-30T19:00:00.000Z",
+    "title": "Webster University",
+    "country": "Uzbekistan",
+    "city": "Tashkent",
+    "major": "Management Information Systems (MIS)",
+    "degree": "Bachelor of Science",
+    "website": "webster.uz"
+  }
+}

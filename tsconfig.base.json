@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "outDir": "dist",
+    "paths": {
+      "@shared/*": ["shared/*"],
+      "@client/*": ["client/*"],
+      "@static/*": ["../static/*"],
+      "@root/*": ["../*"]
+    }
+  },
+  "exclude": ["**/*spec.ts", "dist", "node_modules"]
+}

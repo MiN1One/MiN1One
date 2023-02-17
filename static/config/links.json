@@ -1,0 +1,22 @@
+{
+  "linkedin": {
+    "title": "Linkedin",
+    "value": "linkedin",
+    "url": "https://www.linkedin.com/in/n-ulashev-min1one"
+  },
+  "telegram": {
+    "title": "Telegram",
+    "value": "telegram",
+    "url": "https://t.me/MiN1One"
+  },
+  "github": {
+    "title": "GitHub",
+    "value": "github",
+    "url": "https://github.com/MiN1One"
+  },
+  "medium": {
+    "title": "Medium",
+    "value": "medium",
+    "url": "https://medium.com/@nodirbekulashev01"
+  }
+}
