@@ -1,7 +1,7 @@
 
 # console.log("Hello World!:wave:")
 
-My name is Nodirbek Ulashev, software engineer with a love for creating functional products that benefit people's lives and solve business problems.
+My name is Nodirbek Ulashev, a Software Engineer with a love for creating functional products that benefit people's lives and solve business problems.
 
 ## About Me :computer:
 
