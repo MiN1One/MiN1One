@@ -7,6 +7,7 @@ import Footer from "../Footer/Footer";
 import { useHomeContext } from "@client/contexts/HomeContext";
 import { useGlobalContext } from "@client/contexts/GlobalContext";
 import classNames from "classnames";
+import BgAnimation from "../BgAnimation/BgAnimation";
 
 const HomeContent: FC = () => {
   const {
@@ -53,6 +54,9 @@ const HomeContent: FC = () => {
           : undefined
       }
     >
+      <div className={classes.animation}>
+        <BgAnimation />
+      </div>
       <div className={classes.mainContainer}>
         <TypeAnimation
           sequence={typingSequence}

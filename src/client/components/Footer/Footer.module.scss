@@ -69,6 +69,7 @@
   }
 
   .item {
+    span { color: var(--color-grey-light); }
 
     svg {
       margin-right: 1rem;
@@ -91,7 +92,7 @@
     }
 
     &:hover span {
-      color: var(--color-grey-light);
+      color: var(--color-mean-light);
     }
   }
 }

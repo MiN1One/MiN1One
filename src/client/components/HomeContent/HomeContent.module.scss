@@ -6,6 +6,20 @@
   background: var(--bg-primary);
   position: relative;
   box-shadow: 1rem 2rem 3rem rgba(0,0,0,.45);
+  overflow: hidden;
+
+  .animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: -1;
+    opacity: 1;
+    font-size: 14px;
+  }
 
   .mainContainer {
     max-width: 30rem;

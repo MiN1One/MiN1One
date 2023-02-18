@@ -35,16 +35,13 @@ html {
   @include respond('mid') {
     font-size: 50%;
   }
-
-  // @include respond('sm') {
-  //   font-size: 46.875%;
-  // }
 }
 
 body {
   font-size: 1rem;
   font-family: var(--font-primary);
   background: var(--bg-secondary);
+  -webkit-font-smoothing: antialiased;
 }
 
 button,

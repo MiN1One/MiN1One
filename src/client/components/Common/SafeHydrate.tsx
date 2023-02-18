@@ -24,4 +24,12 @@ const SafeHydrate: FC<SafeHydrateProps> = ({ children, releaseContent }) => {
   );
 };
 
+export const withSafeHydration = (Cmp: React.ElementType) => (
+  () => (
+    <SafeHydrate>
+      <Cmp />
+    </SafeHydrate>  
+  )
+);
+
 export default SafeHydrate;
