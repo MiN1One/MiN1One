@@ -1,7 +1,11 @@
 
 # console.log("Hello World!:wave:")
 
-My name is Nodirbek Ulashev, software engineer with a love for creating functional products that benefit people's lives and solve business problems.
+<p align="center">
+	<img src="https://media.giphy.com/media/xTiIzJSKB4l7xTouE8/giphy.gif" alt="Hello There!">
+</p
+
+My name is Nodirbek Ulashev, a Software Engineer with a love for creating functional products that benefit people's lives and solve business problems.
 
 ## About Me :computer:
 
