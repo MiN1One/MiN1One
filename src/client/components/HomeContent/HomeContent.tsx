@@ -69,7 +69,7 @@ const HomeContent: FC = () => {
         {finishedTyping && (
           <>
             <span className="text text--sub text--mid">
-              Gray screen greeting
+              Matrix Screen greeting
             </span>
             <div className={classes.smile}>
               <span>:</span>
