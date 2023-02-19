@@ -76,7 +76,7 @@ const Contact: FC = () => {
 
   return (
     <div className={classes.contact}>
-      <div>
+      <div className={classes.body}>
         <ul className={classes.list}>
           {contactInfoEls}
         </ul>
