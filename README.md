@@ -9,7 +9,7 @@ My name is Nodirbek Ulashev, a Software Engineer with a love for creating functi
 
 ## About Me :computer:
 
-I am a student of a Bachelor's of Science and have been working in the industry for over almost 2 years. I specialize in the area of full-stack web development and have solid experience working with JavaScript and and other web development technologies including:
+I am a student of a Bachelor's of Science and have been working in the industry for almost 2 years. I specialize in the area of full-stack web development and have solid experience working with JavaScript and and other web development technologies including:
 
 -   HTML
 -   CSS / SASS
