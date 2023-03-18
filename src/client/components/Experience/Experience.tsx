@@ -1,14 +1,13 @@
 import { FC, useMemo } from "react";
 import moment from 'moment';
 import classes from './Experience.module.scss';
-import { SectionProps } from "../Section/Section";
 import { EWorkMode, IEducationData, IExperienceData, } from '@shared/types/home.types';
 import ListItem from "../ListItem/ListItem";
 import { experienceIconsMap, } from '@client/components/Common/IconsMap';
 import { useHomeContext } from "@client/contexts/HomeContext";
 
 
-const Experience: FC<SectionProps> = () => {
+const Experience: FC = () => {
   const { data } = useHomeContext();
 
   const experienceKeys = Object.keys(data.experience);

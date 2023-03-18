@@ -1,11 +1,11 @@
 @use './mixins' as *;
 
 :root {
-  --bg-primary: #131313;
-  --bg-secondary: #212121;
-  --bg-secondary-opaque: rgba(36,36,36,.1);
-  --bg-dark: #101010;
-  --bg-dark-transparent: rgba(8, 8, 8, .9);
+  --bg-primary: #0d0d0d;
+  --bg-secondary: #1c1c1c;
+  --bg-secondary-opaque: rgba(32, 32, 32, 0.1);
+  --bg-dark: #060606;
+  --bg-dark-transparent: rgba(2, 2, 2, 0.9);
 
   --header-width: 8rem;
   --header-height: 100vh;
@@ -23,7 +23,7 @@
   --color-grey: rgb(137, 137, 137);
   --color-grey-opaque: rgba(132, 132, 132, 0.7);
   --color-grey-light: #c9c9c9;
-  --color-primary: #ffd32a;
+  --color-primary: #ffcf0e;
   --color-secondary: #2e86de;
   --color-light: #fefefe;
   --color-mean-light: #dfdfdf;

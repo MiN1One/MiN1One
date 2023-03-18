@@ -8,6 +8,7 @@ import { useHomeContext } from "@client/contexts/HomeContext";
 import { useGlobalContext } from "@client/contexts/GlobalContext";
 import classNames from "classnames";
 import BgAnimation from "../BgAnimation/BgAnimation";
+import SafeHydrate from "../Common/SafeHydrate";
 
 const HomeContent: FC = () => {
   const {
@@ -17,13 +18,13 @@ const HomeContent: FC = () => {
     unscale,
     setUnscaleValue,
   } = useHomeContext();
-  const { media } = useGlobalContext();
+  const { media, loading } = useGlobalContext();
 
   const typingSequence = [
     1000,
-    'Hello!',
-    1500,
     stringToBinaryString('Hello') + '!',
+    1500,
+    'Hello There!',
     () => setFinishedTyping(true),
   ];
 
@@ -58,25 +59,29 @@ const HomeContent: FC = () => {
         <BgAnimation />
       </div>
       <div className={classes.mainContainer}>
-        <TypeAnimation
-          sequence={typingSequence}
-          speed={40}
-          deletionSpeed={40}
-          wrapper="h5"
-          className={"heading type-cursor"}
-          cursor={false}
-        />
-        {finishedTyping && (
-          <>
-            <span className="text text--sub text--mid">
-              Matrix Screen greeting
-            </span>
-            <div className={classes.smile}>
-              <span>:</span>
-              <span>)</span>
-            </div>
-          </>
-        )}
+        <SafeHydrate>
+          {!loading && (
+            <TypeAnimation
+              sequence={typingSequence}
+              speed={45}
+              deletionSpeed={40}
+              wrapper="h5"
+              className="heading type-cursor"
+              cursor={false}
+            />
+          )}
+          {finishedTyping && (
+            <>
+              <span className="text text--sub text--mid">
+                Matrix Screen greeting
+              </span>
+              <div className={classes.smile}>
+                <span>:</span>
+                <span>)</span>
+              </div>
+            </>
+          )}
+        </SafeHydrate>
       </div>
       <Footer />
       <div className={classes.icons}>

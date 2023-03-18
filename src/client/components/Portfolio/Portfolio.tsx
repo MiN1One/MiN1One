@@ -5,11 +5,10 @@ import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
 import classNames from 'classnames';
 import { HiOutlineExternalLink } from 'react-icons/hi';
 import { SiGithub } from 'react-icons/si';
-import { SectionProps } from '../Section/Section';
 import { useHomeContext } from '@client/contexts/HomeContext';
 import { IPortfolioData } from '@shared/types/home.types';
 
-const Portfolio: FC<SectionProps> = () => {
+const Portfolio: FC = () => {
   const [activeProject, setActiveProject] = useState<string | null>(null);
   const { data } = useHomeContext();
   const modalContentRef = useRef<HTMLDivElement>();

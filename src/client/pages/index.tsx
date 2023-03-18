@@ -62,7 +62,11 @@ const IndexPage: NextPage = () => {
   const sectionEls = useMemo(() => {
     return slideableSections.map(slide => {
       const props: SectionProps = {
-        ...slide,
+        small: slide.small,
+        showTitle: slide.showTitle,
+        rightTranslate: slide.rightTranslate,
+        centerContent: slide.centerContent,
+        fixed: slide.fixed,
         active: slide.value === activeSection,
         type: slide.value,
         fullWidth: slide.fullWidth,

@@ -18,7 +18,7 @@
     width: var(--header-width);
     z-index: 1;
     background: rgb(185,185,187);
-    background: linear-gradient(90deg, rgba(185,185,187,0.196516106442577) 0%, rgba(128,128,128,0.2049194677871149) 35%, rgba(0,212,255,0.008841036414565795) 100%);
+    background: linear-gradient(90deg, rgba(135, 135, 135, 0.2) 0%, rgba(104, 104, 104, 0.2) 35%, rgba(0,212,255,0.008) 100%);
   }
 
   .content {
@@ -39,13 +39,14 @@
 
   .item {
     font-size: 1.3rem;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: .5px;
     color: #fff;
+    font-family: 'Ubuntu', sans-serif;
 
     &.active {
       color: var(--color-primary);
-      font-weight: 600;
+      font-weight: 700;
     }
   }
 }

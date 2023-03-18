@@ -1,13 +1,12 @@
 import classNames from "classnames";
 import { FC, memo, useMemo } from "react";
-import { SectionProps } from "../Section/Section";
 import classes from './HomeSlide.module.scss';
 import { calculateMyAge } from '@shared/utils/me.utils';
 import { AiOutlineArrowRight } from 'react-icons/ai';
 import { TfiDownload } from 'react-icons/tfi';
 import { useHomeContext } from "@client/contexts/HomeContext";
 
-const HomeSlide: FC<SectionProps> = () => {
+const HomeSlide: FC = () => {
   const { setActiveSection, data } = useHomeContext();
 
   const sectionKeys = Object.keys(data.sections);

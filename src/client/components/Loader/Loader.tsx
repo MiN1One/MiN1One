@@ -9,7 +9,7 @@ import { useHomeContext } from "@client/contexts/HomeContext";
 
 const Loader: FC = () => {
   const { data } = useHomeContext();
-  const { setLoading, } = useGlobalContext();
+  const { setLoading, loading } = useGlobalContext();
 
   const { ui: uiConfig } = data;
 
@@ -28,22 +28,31 @@ const Loader: FC = () => {
   ]), []);
 
   return (
-    <div className={classNames(classes.loader, 'overlay fade')}>
-      <SafeHydrate>
-        <div className={classNames(classes.label, "text text--xl")}>
-          {getRandomElement(uiConfig.loader)}
+    <div className={classNames(
+      classes.loader, 
+      'overlay',
+      { [classes.active]: loading }
+    )}>
+      <div className={classes.textContent}>
+        <SafeHydrate>
+          <div className={classNames(
+            classes.label, 
+            "text text--xl text--center"
+          )}>
+            {getRandomElement(uiConfig.loader)}
+          </div>
+        </SafeHydrate>
+        <div className={classes.progress}>
+          [
+            <span className={classes.indicator}>
+              <TypeAnimation
+                sequence={animationSequence}
+                cursor={false}
+                speed={60}
+              />
+            </span>
+          ]
         </div>
-      </SafeHydrate>
-      <div className={classes.progress}>
-        [
-          <span className={classes.indicator}>
-            <TypeAnimation
-              sequence={animationSequence}
-              cursor={false}
-              speed={57}
-            />
-          </span>
-        ]
       </div>
       <div className={classes.text}>
         <p className="text text--sub text--xl text--center">

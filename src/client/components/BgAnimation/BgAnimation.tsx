@@ -47,7 +47,7 @@ const BgAnimation: FC = () => {
     }
 
     const draw = () => {
-      ctx.fillStyle = 'rgba(19,19,19,.1)';
+      ctx.fillStyle = 'rgba(10, 10, 10, 0.1)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       for (let i = 0; i < drops.length; i++) {
         let text = letters[Math.floor(Math.random() * letters.length)];
