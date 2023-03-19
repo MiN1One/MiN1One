@@ -1,4 +1,5 @@
 import { Head, Html, Main, NextScript, } from "next/document";
+import Script from "next/script";
 
 const Document = () => (
   <Html lang="en">
@@ -30,6 +31,14 @@ const Document = () => (
         rel="stylesheet"
       />
       <link href="/static/fonts/style.css" rel="stylesheet" />
+      {`<!-- Google tag (gtag.js) -->`}
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-L0XJ2VX5P4" />
+      <Script strategy="afterInteractive">
+        {`window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-L0XJ2VX5P4');`}
+      </Script>
     </Head>
     <body>
       <Main />

@@ -55,34 +55,36 @@ const HomeContent: FC = () => {
           : undefined
       }
     >
-      <div className={classes.animation}>
-        <BgAnimation />
-      </div>
-      <div className={classes.mainContainer}>
-        <SafeHydrate>
-          {!loading && (
-            <TypeAnimation
-              sequence={typingSequence}
-              speed={45}
-              deletionSpeed={40}
-              wrapper="h5"
-              className="heading type-cursor"
-              cursor={false}
-            />
-          )}
-          {finishedTyping && (
-            <>
-              <span className="text text--sub text--mid">
-                Matrix Screen greeting
-              </span>
-              <div className={classes.smile}>
-                <span>:</span>
-                <span>)</span>
-              </div>
-            </>
-          )}
-        </SafeHydrate>
-      </div>
+      <SafeHydrate>
+        {!loading && (
+          <>
+            <div className={classes.animation}>
+              <BgAnimation />
+            </div>
+            <div className={classes.mainContainer}>
+              <TypeAnimation
+                sequence={typingSequence}
+                speed={45}
+                deletionSpeed={40}
+                wrapper="h5"
+                className="heading type-cursor"
+                cursor={false}
+              />
+              {finishedTyping && (
+                <>
+                  <span className="bg-dark text text--sub text--mid">
+                    Matrix Screen greeting
+                  </span>
+                  <div className={classes.smile}>
+                    <span>:</span>
+                    <span>)</span>
+                  </div>
+                </>
+              )}
+            </div>
+          </>
+        )}
+      </SafeHydrate>
       <Footer />
       <div className={classes.icons}>
         <div className={classes.iconWrapper}>
