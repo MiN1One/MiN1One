@@ -1,4 +1,4 @@
-import { FC, memo, } from "react";
+import { FC, memo } from "react";
 import classes from './HomeNavigation.module.scss';
 import classNames from 'classnames';
 import Link from "next/link";

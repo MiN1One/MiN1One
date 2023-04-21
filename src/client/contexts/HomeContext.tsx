@@ -48,9 +48,7 @@ export const HomeContextProvider: FC<HomeContextProps> = (props) => {
 
   const firstSection = Object.keys(initialData.sections)[0];
 
-  const [activeSection, setActiveSection] = useState<null | string>(
-    !media.tablet ? firstSection : null
-  );
+  const [activeSection, setActiveSection] = useState<null | string>(firstSection);
 
   const [unscale, setUnscale] = useState({
     value: 0,
@@ -66,6 +64,14 @@ export const HomeContextProvider: FC<HomeContextProps> = (props) => {
     }, []
   );
 
+  const closeSections = useCallback(() => {
+    setActiveSection(media.tablet ? null : firstSection);
+  }, [media]);
+
+  useEffect(() => {
+    closeSections();
+  }, [closeSections]);
+
   useEffect(() => {
     if (activeSection && activeSection !== 'home') {
       setUnscaleValue(
@@ -74,14 +80,6 @@ export const HomeContextProvider: FC<HomeContextProps> = (props) => {
       );
     }
   }, [activeSection]);
-
-  const closeSections = useCallback(() => {
-    setActiveSection(media.tablet ? null : firstSection);
-  }, [media]);
-
-  useEffect(() => {
-    closeSections();
-  }, [media]);
 
   const state: IHomeContext = {
     finishedTyping,

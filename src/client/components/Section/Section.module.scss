@@ -81,6 +81,7 @@
     font-family: var(--font-secondary);
     font-size: 1.2rem;
     user-select: none;
+    display: none;
 
     span {
       position: absolute;
@@ -105,6 +106,14 @@
       span {
         color: var(--color-grey-light);
       }
+    }
+
+    &[data-drag="true"] {
+      display: flex;
+    }
+
+    @include respond('tablet') {
+      display: flex;
     }
   }
 

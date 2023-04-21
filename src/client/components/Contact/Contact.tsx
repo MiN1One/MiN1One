@@ -7,7 +7,6 @@ import {
 import classNames from "classnames";
 import { useHomeContext } from "@client/contexts/HomeContext";
 import { IContactData, ILinkData, } from '@shared/types/home.types';
-import { HiOutlineExternalLink } from "react-icons/hi";
 
 const infoLinkPrefixesMap = {
   email: 'mailto:',
@@ -95,7 +94,9 @@ const Contact: FC = () => {
           className="text text--mid" 
           title="Portfolio Source Code"
         >
-          <i style={{ color: 'var(--color-secondary)' }}>this.sourceCodeLink</i>
+          <i style={{ color: 'var(--color-secondary)' }}>
+            this.sourceCodeLink
+          </i>
         </a>
         <p className="text text--sub text--lg">
           Designed and baked by <span className="text">MiN1One</span> with ❤️
