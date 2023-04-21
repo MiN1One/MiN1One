@@ -17,30 +17,32 @@
 
   .content {
     border-top: 1px solid var(--color-grey-opaque);
-    padding-right: 4rem;
     display: flex;
     justify-content: space-between;
-    padding-top: 2rem;
+    padding: 2rem 4rem 0 0;
     font-size: 1.665rem;
     color: var(--color-light);
+    text-align: end;
 
-    @include respond('mid') {
-      padding-left: 2rem;
-    }
-
-    @include respond('mid') {
+    @include respond('tablet') {
+      padding: 2rem 2rem 0 2rem;
       align-items: flex-end;
     }
   }
 
   .quoteWrapper {
     display: flex;
-    justify-content: flex-end;
-    margin: 4rem;
+    align-items: flex-end;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 4rem;
 
     @include respond('mid') {
-      margin: 2rem;
+      padding: 2rem;
     }
+
+    p { width: 100%; }
   }
   
   .quote {
@@ -52,7 +54,7 @@
     max-width: 50rem;
 
     @include respond('desktop') {
-      font-size: 1.6rem;
+      font-size: 1.7rem;
     }
   }
   
@@ -80,6 +82,15 @@
     &:not(:last-child) { margin-right: 2.5rem; }
 
     @include respond('mid') {
+      font-size: 1.8rem;
+      color: var(--color-light);
+
+      svg {
+        width: 2.25rem;
+        height: 2.25rem;
+        margin-right: 1.5rem;
+      }
+      
       &:not(:last-child) {
         margin-bottom: 2rem;
         margin-right: 0;

@@ -45,7 +45,7 @@ const Section: FC<
     children,
     fixed = false,
     small = false,
-    showTitle = false,
+    showTitle = true,
     centerContent = false,
     fullWidth,
     section,
@@ -104,8 +104,8 @@ const Section: FC<
   }, [fixedSlide]);
 
   useEffect(() => {
-    const getMousePos = debounce(() => getMousePosition(), 500);
     getMousePosition();
+    const getMousePos = debounce(() => getMousePosition(), 500);
     window.addEventListener('resize', getMousePos);
     return () => {
       window.removeEventListener('resize', getMousePos);
@@ -139,7 +139,7 @@ const Section: FC<
           setUnscaleValue(0, true);
         }
       }
-    }, [active, slideTransition, activeSection, media.tablet]
+    }, [active, slideTransition, activeSection, media]
   );
 
   const onMouseDown = useCallback((event?: TouchEvent<HTMLElement>) => {
@@ -194,7 +194,7 @@ const Section: FC<
       className={containerClasses} 
       {...(fixedSlide ? {} : {
         onMouseUp,
-        'data-dragging': mouseDown.toString(),
+        'data-dragging': mouseDown?.toString(),
         onTransitionEnd: onTransionEnd,
         onTouchEnd: onTouchEnd,
         ...(media.tablet ? {
@@ -240,19 +240,15 @@ const Section: FC<
           </div>
         )}
       </div>
-      {!fixedSlide && (
-        <button
-          {...(media.tablet ? {} : {
-            'data-drag': true,
-            onMouseDown: () => onMouseDown()
-          })}
-          ref={dragBtnRef}
-          className={classes.btnControl}
-          aria-label="Drag control"
-        >
-          <span>Hold and slide to close</span>
-        </button>
-      )}
+      <button
+        data-drag={(!fixedSlide).toString()}
+        onMouseDown={() => !media.tablet && onMouseDown()}
+        ref={dragBtnRef}
+        className={classes.btnControl}
+        aria-label="Drag control"
+      >
+        <span>Hold and slide to close</span>
+      </button>
     </section>
   );
 };

@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 
-const useMedia = (...breakpoints: [string, string][]) => {
+const useMedia = (...breakpoints: [string, string, boolean?][]) => {
   const [media, setMedia] = useState<Record<string, boolean>>({});
   const mounted = useRef(false);
 
@@ -8,8 +8,12 @@ const useMedia = (...breakpoints: [string, string][]) => {
   // unnecessary renders and state updates
   if (!mounted.current) {
     const initialMedia: Record<string, boolean> = {};
-    breakpoints.forEach(([name, breakpoint]) => {
-      if (typeof window === 'undefined') return;
+
+    breakpoints.forEach(([name, breakpoint, defaultVal]) => {
+      if (typeof window === 'undefined') {
+        initialMedia[name] = defaultVal || false;
+        return;
+      }
       const browserMedia = window.matchMedia(breakpoint);
       initialMedia[name] = browserMedia.matches;
       browserMedia.onchange = () => {
@@ -19,6 +23,7 @@ const useMedia = (...breakpoints: [string, string][]) => {
         }));
       };
     });
+
     setMedia(initialMedia);
     mounted.current = true;
   }

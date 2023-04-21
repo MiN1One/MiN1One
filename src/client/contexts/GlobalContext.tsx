@@ -20,9 +20,9 @@ export const GlobalContextProvider: FC<{ children: React.ReactNode }> =
     const [loading, setLoading] = useState(true);
     const [cssVariables, setCssVariables] = useState<Record<string, string>>({});
     const media = useMedia(
-      ['small', 'screen and (max-width: 31.25em)'],
-      ['mobile', 'only screen and (max-width: 48em)'],
-      ['tablet', 'only screen and (max-width: 64em)'],
+      ['small', 'screen and (max-width: 31.25em)', false],
+      ['mobile', 'only screen and (max-width: 48em)', false],
+      ['tablet', 'only screen and (max-width: 64em)', false],
     );
 
     const state: IGlobalContext = {

@@ -10,7 +10,6 @@ import Portfolio from "@client/components/Portfolio/Portfolio";
 import Contact from "@client/components/Contact/Contact";
 import axios from 'axios';
 import PageHead from "@client/components/Common/PageHead";
-import { useMemo } from "react";
 
 interface Section {
   value: string;
@@ -30,27 +29,24 @@ const slideableSections: Section[] = [
     small: true,
     fixed: true,
     centerContent: true,
+    showTitle: false,
   },
   {
     component: Skills,
     value: 'skills',
-    showTitle: true,
   },
   {
     component: Experience,
     value: 'experienceAndEdu',
-    showTitle: true,
   },
   {
     component: Portfolio,
     value: 'portfolio',
-    showTitle: true,
     // fullWidth: true,
   },
   {
     component: Contact,
     value: 'contact',
-    showTitle: true,
     small: true,
   }
 ];
@@ -59,26 +55,19 @@ const slideableSections: Section[] = [
 const IndexPage: NextPage = () => {
   const { activeSection, data, } = useHomeContext();
 
-  const sectionEls = useMemo(() => {
-    return slideableSections.map(slide => {
-      const props: SectionProps = {
-        small: slide.small,
-        showTitle: slide.showTitle,
-        rightTranslate: slide.rightTranslate,
-        centerContent: slide.centerContent,
-        fixed: slide.fixed,
-        active: slide.value === activeSection,
-        type: slide.value,
-        fullWidth: slide.fullWidth,
-        section: data.sections[slide.value]
-      };
-      return (
-        <Section key={slide.value} {...props}>
-          <slide.component {...props} />
-        </Section>
-      );
-    });
-  }, [activeSection, data]);
+  const sectionEls = slideableSections.map(slide => {
+    const props: SectionProps = {
+      ...slide,
+      active: slide.value === activeSection,
+      type: slide.value,
+      section: data.sections[slide.value]
+    };
+    return (
+      <Section key={slide.value} {...props}>
+        <slide.component {...props} />
+      </Section>
+    );
+  });
 
   return (
     <PageHead
@@ -101,7 +90,6 @@ export const getStaticProps: GetStaticProps = async () => {
 
   return {
     props: { data: response.data, },
-    revalidate: 1000,
   }
 };
 

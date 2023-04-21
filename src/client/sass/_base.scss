@@ -31,10 +31,6 @@ html {
   @include respond('tablet') {
     font-size: 53.125%;
   }
-
-  @include respond('mid') {
-    font-size: 50%;
-  }
 }
 
 body {

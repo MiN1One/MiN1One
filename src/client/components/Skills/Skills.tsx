@@ -2,17 +2,17 @@ import { CSSProperties, FC, memo, useMemo } from "react";
 import { HiOutlineExternalLink } from "react-icons/hi";
 import classes from './Skills.module.scss';
 import classNames from "classnames";
-import { ELingualProficiency, ESkillProficiency, ESkillType, ISkillItem} from '@shared/types/skill.types';
+import { ELingualProficiency, ESkillProficiency, ESkillType, ISkillItem } from '@shared/types/skill.types';
 import { skillIconsMap } from '@client/components/Common/IconsMap';
 import { matchSkillLevelToProficiency } from "@shared/utils/me.utils";
 import { useHomeContext } from "@client/contexts/HomeContext";
 import { useGlobalContext } from "@client/contexts/GlobalContext";
 import { SectionProps } from '../Section/Section';
+import SafeHydrate from "../Common/SafeHydrate";
 
 const Skills: FC<SectionProps> = ({ active }) => {
-  const { data } = useHomeContext();
+  const { data: { skills } } = useHomeContext();
   const { media } = useGlobalContext();
-  const { skills } = data;
 
   const technicalSkillKeys = Object.keys(skills.technical.list);
   const lingualSkillKeys = Object.keys(skills.lingual.list);
@@ -63,7 +63,9 @@ const Skills: FC<SectionProps> = ({ active }) => {
           aria-label={skill.title}
         >
           <div className={classes.itemHead}>
-            {media.small && Icon && <Icon />}
+            <SafeHydrate>
+              {media.small && Icon && <Icon />}
+            </SafeHydrate>
             <div className={classes.titleGroup}>
               <span className={classes.label}>
                 {skill.title}

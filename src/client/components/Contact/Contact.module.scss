@@ -11,15 +11,15 @@
     align-items: flex-start;
     flex-direction: column;
 
-    &:not(:last-child) {
-      margin-bottom: 5rem;
-    }
+    &:not(:last-child) { margin-bottom: 5rem; }
   }
 
   .item {
     display: flex;
     align-items: center;
     font-family: var(--font-secondary);
+    flex-wrap: wrap;
+    max-width: 100%;
 
     a:not(:last-child) {
       margin-bottom: .5rem;

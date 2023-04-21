@@ -3,14 +3,22 @@ import { FC, useEffect, useState } from "react";
 interface SafeHydrateProps {
   children: React.ReactNode;
   releaseContent?: boolean;
+  onRender?: () => void;
 }
 
-const SafeHydrate: FC<SafeHydrateProps> = ({ children, releaseContent }) => {
+const SafeHydrate: FC<SafeHydrateProps> = ({
+  children,
+  releaseContent,
+  onRender
+}) => {
   const [contentRendered, setContentRendered] = useState(false);
 
   useEffect(() => {
     setContentRendered(true);
-  }, []);
+    if (typeof onRender === 'function') {
+      onRender();
+    }
+  }, [onRender]);
 
   if (!contentRendered) return null;
 
