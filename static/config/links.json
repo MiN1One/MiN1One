@@ -4,6 +4,11 @@
     "value": "linkedin",
     "url": "https://www.linkedin.com/in/n-ulashev-min1one"
   },
+  "youtube": {
+    "title": "YouTube",
+    "value": "youtube",
+    "url": "https://www.youtube.com/@nodirbekulashev"
+  },
   "telegram": {
     "title": "Telegram",
     "value": "telegram",

@@ -13,7 +13,8 @@ import {
   SiShopify,
   SiTelegram,
   SiTypescript,
-  SiWebpack
+  SiWebpack,
+  SiYoutube
 } from 'react-icons/si';
 import CustomIcon from './CustomIcon';
 import EpamLogo from './EpamLogo';
@@ -27,6 +28,7 @@ export const linkIconsMap = {
   telegram: SiTelegram,
   github: SiGithub,
   medium: SiMedium,
+  youtube: SiYoutube,
 };
 
 export const skillIconsMap = {
