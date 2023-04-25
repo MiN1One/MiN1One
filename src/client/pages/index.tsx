@@ -90,7 +90,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   return {
     props: { data: response.data, },
-    revalidate: 1000
+    revalidate: 10000
   }
 };
 

@@ -46,7 +46,7 @@
   }
 
   @include respond('sm') {
-    --header-width: 5.5rem;
+    --header-width: 5rem;
     --slide-content-max-width: 90%;
     --modal-content-max-width: 95%;
   }
