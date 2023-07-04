@@ -24,6 +24,28 @@
     }
   }
 
+  .indicatorWrapper {
+    position: relative;
+    display: flex;
+    
+    svg {
+      width: 3rem;
+      height: 3rem;
+      fill: var(--color-secondary);
+      position: absolute;
+      top: -90%;
+      left: 17%;
+      transform: translateX(-40%);
+      z-index: 2;
+
+      @include respond('sm') {
+        top: -100%;
+        left: 25%;
+        transform: translateX(-40%) rotate(7deg);
+      }
+    }
+  }
+
   .iconWrapper {
     position: relative;
     width: 7rem;

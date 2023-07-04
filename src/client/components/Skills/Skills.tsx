@@ -56,9 +56,14 @@ const Skills: FC<SectionProps> = ({ active }) => {
     return technicalSkillKeys.map((key) => {
       const skill = skills.technical.list[key] as ISkillItem;
       let Icon = skillIconsMap[key];
+      const learning = skill.level === 0;
       return (
         <li 
-          className={classNames(classes.item, classes[key])}
+          className={classNames(
+            classes.item, 
+            classes[key], 
+            { [classes.learning]: learning }
+          )}
           key={key}
           aria-label={skill.title}
         >
@@ -95,12 +100,14 @@ const Skills: FC<SectionProps> = ({ active }) => {
             {Icon && <Icon />}
             <div className={classes.bodyGroup}>
               <div className={classes.progress}>
-                <span style={{
-                  '--level': `${skill.level / 10 * 100}%`,
-                } as CSSProperties} />
+                <span 
+                  style={{
+                    '--level': `${skill.level / 10 * 100}%`,
+                  } as CSSProperties}
+                />
               </div>
               <span className={classNames("text", classes.level)}>
-                {skill.level} / 10
+                {!learning ? `${skill.level} / 10` : 'Soon...'}
               </span>
             </div>
           </div>

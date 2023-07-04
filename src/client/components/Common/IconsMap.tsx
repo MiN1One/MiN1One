@@ -21,7 +21,10 @@ import EpamLogo from './EpamLogo';
 import LlamaLogo from './LlamaLogo';
 import { RiCompasses2Line } from 'react-icons/ri';
 import WebsterLogo from './WebsterLogo';
+import { GiGraduateCap } from 'react-icons/gi';
 import { TfiEmail } from 'react-icons/tfi';
+import { NxjsLogo } from './NxjsLogo';
+import { OpenAiLogo } from './OpenAiLogo';
 
 export const linkIconsMap = {
   linkedin: SiLinkedin,
@@ -42,7 +45,9 @@ export const skillIconsMap = {
   shopify: SiShopify,
   ts: SiTypescript,
   js: SiJavascript,
+  openai: OpenAiLogo,
   sass: SiSass,
+  nxjs: NxjsLogo,
   en: () => <CustomIcon name="us" />,
   ru: () => <CustomIcon name="ru" />,
   uz: () => <CustomIcon name="uz" />,
@@ -54,6 +59,10 @@ export const experienceIconsMap = {
   freelance: RiCompasses2Line,
   webster: WebsterLogo,
 };
+
+export const miscUiIconsMap = {
+  graduate: GiGraduateCap
+}
 
 export const contactInfoIconsMap = {
   email: TfiEmail

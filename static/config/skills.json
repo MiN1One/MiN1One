@@ -21,7 +21,7 @@
         "value": "node",
         "type": "env",
         "url": "https://nodejs.org/en/docs/",
-        "level": 8
+        "level": 9.15
       },
       "react-next": {
         "title": "ReactJs & NextJs",
@@ -56,7 +56,7 @@
         "value": "shopify",
         "type": "platform",
         "url": "https://shopify.dev/api",
-        "level": 8.5
+        "level": 9.25
       },
       "redux-zustand": {
         "title": "Redux & Zustand",
@@ -78,6 +78,20 @@
         "type": "preprocessor",
         "url": "https://sass-lang.com/documentation/",
         "level": 9.5
+      },
+      "nxjs": {
+        "title": "NXJs",
+        "value": "nxjs",
+        "type": "framework",
+        "url": "https://nx.dev",
+        "level": 0
+      },
+      "openai": {
+        "title": "Open AI APIs",
+        "value": "openai",
+        "type": "tool",
+        "url": "https://openai.com",
+        "level": 0
       }
     }
   },

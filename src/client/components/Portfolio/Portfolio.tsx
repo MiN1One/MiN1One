@@ -56,16 +56,16 @@ const Portfolio: FC = () => {
             'overlay overlay--color overlay--lg overlay--hover'
           )}
         >
-          {project.github.link && project.github.repo && (
+          {(project.link || (project.github.link && project.github.repo)) && (
             <a
-              href={project.github.link}
-              title={`${project.title} ${project.github.repo}`}
+              href={project.link || project.github.link}
+              title={`${project.title} ${project.link || project.github.repo}`}
               target="_blank"
               rel="noreferrer noopener"
               className={classNames(classes.link, 'link link--withIcon')}
             >
-              <SiGithub />
-              GitHub
+              {project.github.link && !project.link && <SiGithub />}
+              {project.github.link ? 'GitHub' : project.title}
               <HiOutlineExternalLink />
             </a>
           )}

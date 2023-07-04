@@ -16,6 +16,7 @@ interface ListItemProps {
   icon?: React.ComponentType;
   iconBg?: string;
   children?: React.ReactNode;
+  secondaryIcon?: React.ComponentType;
   [key: string]: any;
 }
 
@@ -32,6 +33,7 @@ const ListItem: FC<ListItemProps> = (props) => {
     icon,
     iconBg, 
     children = null,
+    secondaryIcon,
     ...restProps
   } = props;
 
@@ -58,6 +60,7 @@ const ListItem: FC<ListItemProps> = (props) => {
   ));
 
   const Icon = icon;
+  const SecondaryIcon = secondaryIcon;
   
   return createElement<{
     children: React.ReactNode,
@@ -84,7 +87,10 @@ const ListItem: FC<ListItemProps> = (props) => {
           <div className={classes.itemContent}>
             <div className={classes.titleGroup}>
               <div className={classes.title}>
-                <span className={classNames(classes.status, 'indicator overlay')} />
+                <div className={classes.indicatorWrapper}>
+                  {SecondaryIcon && <SecondaryIcon />}
+                  <span className={classNames(classes.status, 'indicator overlay')} />
+                </div>
                 <h6 className="heading heading--6">
                   {title}
                 </h6>
@@ -116,7 +122,7 @@ const ListItem: FC<ListItemProps> = (props) => {
                 </div>
               )}
               {headlineItems.length > 0 && (
-                <div className="headline text--sub text">
+                <div className="text--sub text">
                   {headlineEls}
                 </div>
               )}

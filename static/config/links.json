@@ -18,5 +18,10 @@
     "title": "Medium",
     "value": "medium",
     "url": "https://medium.com/@nodirbekulashev01"
+  },
+  "youtube": {
+    "title": "YouTube",
+    "value": "youtube",
+    "url": "https://www.youtube.com/@nodirbekulashev"
   }
 }

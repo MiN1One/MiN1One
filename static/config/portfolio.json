@@ -106,5 +106,24 @@
       "/static/images/jpg/project_image_36-mobile.jpg"
     ],
     "forSale": true
+  },
+  "softit": {
+    "title": "Soft IT",
+    "link": "https://softit.uz",
+    "year": 2023,
+    "github": {
+      "link": null,
+      "repo": null
+    },
+    "technologies": [],
+    "type": "front-end",
+    "value": "softit",
+    "description": "",
+    "images": [
+      "/static/images/jpg/project_image_37.jpg",
+      "/static/images/jpg/project_image_38.jpg",
+      "/static/images/jpg/project_image_39-mobile.jpg"
+    ],
+    "forSale": false
   }
 }

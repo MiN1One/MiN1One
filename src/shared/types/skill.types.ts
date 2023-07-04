@@ -3,7 +3,7 @@ export enum ESkillType {
   env = 'Environment',
   framework = 'Framework / Library',
   platform = 'Platform',
-  tool = 'Tool',
+  tool = 'Tool / Tool set',
   lib = 'Library',
   preprocessor = 'Prepocessor',
   bundler = 'Bundler',
@@ -17,18 +17,18 @@ export enum ESkillProficiency {
   good = 'Good',
   average = 'Average',
   poor = 'Poor',
-  master = 'Master'
+  master = 'Master',
+  learning = 'Learning',
 }
 
-export const skillLevelToProficiencyMap: Record<
-  string, ProficiencyTypes
-> = {
+export const skillLevelToProficiencyMap: Record<string, ProficiencyTypes> = {
   10: 'master',
   9: 'very-good',
   7: 'good',
   5: 'average',
-  3: 'poor'
-}
+  3: 'poor',
+  0: 'learning'
+};
 
 export type ProficiencyTypes = keyof typeof ESkillProficiency;
 
@@ -44,5 +44,5 @@ export interface ISkillItem {
 export enum ELingualProficiency {
   advanced = 'Advanced',
   'upper-intermediate' = 'Upper-Intermediate',
-  native = 'Native'
+  native = 'Native',
 }

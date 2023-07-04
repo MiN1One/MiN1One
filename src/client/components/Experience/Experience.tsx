@@ -3,7 +3,7 @@ import moment from 'moment';
 import classes from './Experience.module.scss';
 import { EWorkMode, IEducationData, IExperienceData, } from '@shared/types/home.types';
 import ListItem from "../ListItem/ListItem";
-import { experienceIconsMap, } from '@client/components/Common/IconsMap';
+import { experienceIconsMap, miscUiIconsMap, } from '@client/components/Common/IconsMap';
 import { useHomeContext } from "@client/contexts/HomeContext";
 
 
@@ -57,10 +57,11 @@ const Experience: FC = () => {
       return (
         <ListItem
           key={key}
-          title={education.title}
+          secondaryIcon={miscUiIconsMap['graduate']}
+          title={education.title + (education.gpa ? ` (GPA ${education.gpa})` : '')}
           location={`${education.city}, ${education.country}`}
           link={education.website}
-          data-active={!education.gpa}
+          data-active
           icon={experienceIconsMap[key]}
           iconBg="var(--color-light)"
           headlineItems={[education.degree, education.major]}
