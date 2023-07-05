@@ -57,7 +57,6 @@ const Experience: FC = () => {
       return (
         <ListItem
           key={key}
-          secondaryIcon={miscUiIconsMap['graduate']}
           title={education.title + (education.gpa ? ` (GPA ${education.gpa})` : '')}
           location={`${education.city}, ${education.country}`}
           link={education.website}
