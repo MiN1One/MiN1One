@@ -80,7 +80,7 @@
         "level": 9.5
       },
       "nxjs": {
-        "title": "NXJs",
+        "title": "NX Workspaces",
         "value": "nxjs",
         "type": "framework",
         "url": "https://nx.dev",
