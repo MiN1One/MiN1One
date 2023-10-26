@@ -1,15 +1,15 @@
-import { GetStaticProps, NextPage } from "next";
-import Section, { SectionProps } from "@client/components/Section/Section";
 import Layout from "@client/components/Common/Layout";
-import Skills from "@client/components/Skills/Skills";
+import PageHead from "@client/components/Common/PageHead";
+import Contact from "@client/components/Contact/Contact";
 import Experience from "@client/components/Experience/Experience";
 import HomeContent from "@client/components/HomeContent/HomeContent";
 import HomeSlide from "@client/components/HomeSlide/HomeSlide";
-import { useHomeContext, withHomeContext } from "@client/contexts/HomeContext";
 import Portfolio from "@client/components/Portfolio/Portfolio";
-import Contact from "@client/components/Contact/Contact";
+import Section, { SectionProps } from "@client/components/Section/Section";
+import Skills from "@client/components/Skills/Skills";
+import { useHomeContext, withHomeContext } from "@client/contexts/HomeContext";
 import axios from 'axios';
-import PageHead from "@client/components/Common/PageHead";
+import { GetStaticProps, NextPage } from "next";
 
 interface Section {
   value: string;
@@ -90,7 +90,6 @@ export const getStaticProps: GetStaticProps = async () => {
 
   return {
     props: { data: response.data, },
-    revalidate: 10000
   }
 };
 

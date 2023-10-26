@@ -4,7 +4,7 @@
   "description": "",
   "author": "",
   "engines": {
-    "node": ">=18.12.1"
+    "node": "18.12.1"
   },
   "private": true,
   "license": "UNLICENSED",
@@ -14,7 +14,7 @@
     "start:build": "del-cli \"./dist\" && cross-env NODE_ENV=build PORT=5001 nest build --path tsconfig.build.json --webpack",
     "build:client": "cd src/client && cross-env NODE_ENV=production next build",
     "build:server": "nest build",
-    "start:prod": "nest start",
+    "start:server": "nest start",
     "dev": "del-cli \"./dist\" && cross-env NODE_ENV=development nest build --path tsconfig.server.json --webpack --watch",
     "debug": "cross-env NODE_ENV=development nest start --debug --watch",
     "start:heroku": "cross-env NODE_ENV=production node dist/server/main"
