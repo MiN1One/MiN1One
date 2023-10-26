@@ -15,8 +15,8 @@
   --slide-body-height: 75%;
   --home-content-width: 65%;
 
-  --slide-transition-duration: .85s;
-  
+  --slide-transition-duration: 0.85s;
+
   --font-primary: 'Hack', sans-serif;
   --font-secondary: 'Ubuntu', sans-serif;
 
@@ -27,8 +27,8 @@
   --color-secondary: #2e86de;
   --color-light: #fefefe;
   --color-mean-light: #dfdfdf;
-  --color-success: #A3CB38;
-  --color-success-opaque: rgba(163,203,56,.45);
+  --color-success: #a3cb38;
+  --color-success-opaque: rgba(163, 203, 56, 0.45);
 
   @include respond('desktop') {
     --slide-content-max-width: 75%;
@@ -38,7 +38,7 @@
     --home-content-width: 100%;
     --slide-content-max-width: 85%;
     --modal-content-max-width: 75%;
-    --slide-transition-duration: .65s;
+    --slide-transition-duration: 0.65s;
   }
 
   @include respond('mid') {

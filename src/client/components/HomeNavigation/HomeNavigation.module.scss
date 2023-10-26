@@ -6,19 +6,18 @@
   width: var(--header-width);
   height: var(--header-height);
   background: var(--bg-secondary);
-  border-left: 2px solid rgba(#fff,.225);
+  border-left: 2px solid rgba(#fff, 0.225);
   overflow: hidden;
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
     height: var(--header-height);
     width: var(--header-width);
     z-index: 1;
-    background: rgb(185,185,187);
-    background: linear-gradient(90deg, rgba(135, 135, 135, 0.2) 0%, rgba(104, 104, 104, 0.2) 35%, rgba(0,212,255,0.008) 100%);
+    background: linear-gradient(90deg, rgba(#000, 0.08) 0%, rgba(0, 212, 255, 0.008) 100%);
   }
 
   .content {
@@ -39,14 +38,13 @@
 
   .item {
     font-size: 1.3rem;
-    font-weight: 600;
-    letter-spacing: .5px;
+    font-weight: 500;
+    letter-spacing: 1px;
     color: #fff;
     font-family: 'Ubuntu', sans-serif;
 
     &.active {
       color: var(--color-primary);
-      font-weight: 700;
     }
   }
 }

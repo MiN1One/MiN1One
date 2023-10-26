@@ -1,10 +1,10 @@
+import { useGlobalContext } from "@client/contexts/GlobalContext";
+import { useHomeContext } from "@client/contexts/HomeContext";
+import { debounce } from "@client/utils/throttle.utils";
 import { FC, memo, useCallback, useEffect, useMemo, useRef } from "react";
 import { withSafeHydration } from "../Common/SafeHydrate";
-import { debounce } from "@client/utils/throttle.utils";
-import { useHomeContext } from "@client/contexts/HomeContext";
-import { useGlobalContext } from "@client/contexts/GlobalContext";
 
-let letters: string | string[] = 'AKLMNOLMNOPQRSTUVXYZABCDQRSTUVXYZABCDEFGHIJKMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKEFGHIJKLPLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQBCDEFGHIJRSTUVXYZ';
+let letters: string | string[] = 'AKLMNOLMNOPQRSTUVXYZABCDQRSTUVXYZABCDEFGHIJKMNOPQRSTUVXYZABCDEFGHIJKLMNOPQRSTUVXYZABCDEFGHIJKEFGHIJKLPLMNOPQRSTUVXYZABCDEFGHIJKLMNOPQBCDEFGHIJRSTUVXYZ1234567890';
 letters = letters.split('');
 
 const FONT_SIZE = 23;
@@ -24,7 +24,7 @@ const BgAnimation: FC = () => {
     canvasRef.current.height = window.innerHeight;
     const htmlStyles = window.getComputedStyle(document.documentElement, null);
     const staticFontSize = parseFloat(
-      htmlStyles.getPropertyValue('font-size').replace('px', '')
+      htmlStyles.getPropertyValue('font-size')
     );
     const fontSizeInPercents = staticFontSize / BROWSER_FONT_SIZE;
     const newFontSizeInPx = FONT_SIZE * fontSizeInPercents;
@@ -64,15 +64,15 @@ const BgAnimation: FC = () => {
   }, []);
 
   const rerenderOnResize = useCallback(
-    debounce(setCanvasContext, 1000), 
+    debounce(setCanvasContext, 1000),
     [setCanvasContext]
   );
 
   useEffect(() => {
     if (
-      !activeSection || 
+      !activeSection ||
       (
-        (activeSection === 'home' || activeSection === 'contact') && 
+        (activeSection === 'home' || activeSection === 'contact') &&
         !media.tablet
       )
     ) {

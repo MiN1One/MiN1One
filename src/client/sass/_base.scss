@@ -9,8 +9,8 @@
 }
 
 ::-webkit-scrollbar {
-  width: .5rem;
-  height: .5rem;
+  width: 0.5rem;
+  height: 0.5rem;
 }
 
 ::-webkit-scrollbar-track {
@@ -23,6 +23,10 @@
 
 html {
   font-size: 62.5%;
+
+  @include respond('wide') {
+    font-size: 67.5%;
+  }
 
   @include respond('desktop') {
     font-size: 56.25%;
@@ -44,8 +48,10 @@ button,
 input {
   border: none;
   background: none;
-  
-  &:focus { outline: none; }
+
+  &:focus {
+    outline: none;
+  }
 }
 
 a {
@@ -60,7 +66,7 @@ a {
   margin: 0 auto;
 }
 
-[tabIndex="0"],
+[tabIndex='0'],
 button {
   cursor: pointer;
 }
@@ -69,8 +75,10 @@ button {
   cursor: grab;
 }
 
-[data-dragging="true"] {
+[data-dragging='true'] {
   cursor: grabbing;
 }
 
-ul { list-style: none; }
+ul {
+  list-style: none;
+}
