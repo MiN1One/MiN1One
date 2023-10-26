@@ -8,7 +8,7 @@
     },
     "year": 2021,
     "technologies": [],
-    "type": "full-stack",
+    "type": "FULL_STACK",
     "value": "w180gradus",
     "description": "",
     "images": [
@@ -31,7 +31,7 @@
     },
     "year": 2020,
     "technologies": [],
-    "type": "full-stack",
+    "type": "FRONT_END",
     "value": "weather-exp",
     "description": "",
     "images": [
@@ -51,7 +51,7 @@
     },
     "year": 2020,
     "technologies": [],
-    "type": "front-end",
+    "type": "FRONT_END",
     "value": "weather-exp-react",
     "description": "",
     "images": [
@@ -72,7 +72,7 @@
     },
     "year": 2020,
     "technologies": [],
-    "type": "full-stack",
+    "type": "FULL_STACK",
     "value": "holis",
     "description": "",
     "images": [
@@ -94,7 +94,7 @@
     },
     "year": 2021,
     "technologies": [],
-    "type": "front-end",
+    "type": "FRONT_END",
     "value": "sbuy",
     "description": "",
     "images": [
@@ -116,13 +116,127 @@
       "repo": null
     },
     "technologies": [],
-    "type": "front-end",
+    "type": "FRONT_END",
     "value": "softit",
     "description": "",
     "images": [
       "/static/images/jpg/project_image_37.jpg",
       "/static/images/jpg/project_image_38.jpg",
       "/static/images/jpg/project_image_39-mobile.jpg"
+    ],
+    "forSale": false
+  },
+  "uzbtrip": {
+    "title": "Uzbekistan Trip",
+    "link": "https://uzbtrip.com",
+    "year": 2023,
+    "github": {
+      "link": null,
+      "repo": null
+    },
+    "technologies": [],
+    "type": "FRONT_END",
+    "value": "uzbtrip",
+    "description": "",
+    "images": [
+      "/static/images/jpg/uzbtrip-1.jpg",
+      "/static/images/jpg/uzbtrip-2.jpg",
+      "/static/images/jpg/uzbtrip-3-mobile.jpg"
+    ],
+    "forSale": false
+  },
+  "superio": {
+    "title": "Superio",
+    "link": "https://jobfront.inminternational.uz",
+    "year": 2023,
+    "github": {
+      "link": null,
+      "repo": null
+    },
+    "technologies": [],
+    "type": "FRONT_END",
+    "value": "superio",
+    "description": "",
+    "images": [
+      "/static/images/jpg/superio-1.jpg",
+      "/static/images/jpg/superio-2.jpg",
+      "/static/images/jpg/superio-3-mobile.jpg"
+    ],
+    "forSale": false
+  },
+  "bugatchi": {
+    "title": "Bugatchi",
+    "link": "https://bugatchi.com",
+    "year": 2023,
+    "github": {
+      "link": null,
+      "repo": null
+    },
+    "technologies": [],
+    "type": "FULL_STACK",
+    "value": "bugatchi",
+    "description": "",
+    "images": [
+      "/static/images/jpg/bugatchi-1.jpg",
+      "/static/images/jpg/bugatchi-2.jpg",
+      "/static/images/jpg/bugatchi-3-mobile.jpg"
+    ],
+    "forSale": false
+  },
+  "wildone": {
+    "title": "Wildone",
+    "link": "https://wildone.com",
+    "year": 2023,
+    "github": {
+      "link": null,
+      "repo": null
+    },
+    "technologies": [],
+    "type": "FRONT_END",
+    "value": "wildone",
+    "description": "",
+    "images": [
+      "/static/images/jpg/wildone-1.jpg",
+      "/static/images/jpg/wildone-2.jpg",
+      "/static/images/jpg/wildone-3-mobile.jpg"
+    ],
+    "forSale": false
+  },
+  "b2b-kassatex": {
+    "title": "B2B Kassatex",
+    "link": "https://b2b.kassatex.com",
+    "year": 2023,
+    "github": {
+      "link": null,
+      "repo": null
+    },
+    "technologies": [],
+    "type": "FRONT_END",
+    "value": "b2b-kassatex",
+    "description": "",
+    "images": [
+      "/static/images/jpg/kassatex-1.jpg",
+      "/static/images/jpg/kassatex-2.jpg",
+      "/static/images/jpg/kassatex-3-mobile.jpg"
+    ],
+    "forSale": false
+  },
+  "upsell-cross-sell": {
+    "title": "Upsell Cross Sell",
+    "link": "https://apps.shopify.com/upsell-prod",
+    "year": 2023,
+    "github": {
+      "link": null,
+      "repo": null
+    },
+    "technologies": [],
+    "type": "FULL_STACK",
+    "value": "upsell-cross-sell",
+    "description": "",
+    "images": [
+      "/static/images/jpg/upsell-1.jpg",
+      "/static/images/jpg/upsell-2.jpg",
+      "/static/images/jpg/upsell-3.jpg"
     ],
     "forSale": false
   }

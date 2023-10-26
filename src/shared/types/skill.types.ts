@@ -10,12 +10,17 @@ export enum ESkillType {
   db = 'Database',
 }
 
+export enum EStackTypes {
+  FRONT_END = 'Front-End',
+  FULL_STACK = 'Full-Stack',
+}
+
 export type SkillTypes = keyof typeof ESkillType;
 
 export enum ESkillProficiency {
   'very-good' = 'Very Good',
   good = 'Good',
-  average = 'Average',
+  basic = 'Basic',
   poor = 'Poor',
   master = 'Master',
   learning = 'Learning',
@@ -25,9 +30,9 @@ export const skillLevelToProficiencyMap: Record<string, ProficiencyTypes> = {
   10: 'master',
   9: 'very-good',
   7: 'good',
-  5: 'average',
+  5: 'basic',
   3: 'poor',
-  0: 'learning'
+  0: 'learning',
 };
 
 export type ProficiencyTypes = keyof typeof ESkillProficiency;

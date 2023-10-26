@@ -64,7 +64,7 @@
         "type": "framework",
         "url": "https://redux.js.org/usage/",
         "level": 8
-      },  
+      },
       "webpack": {
         "title": "Webpack 4/5",
         "value": "webpack",
@@ -84,7 +84,7 @@
         "value": "nxjs",
         "type": "framework",
         "url": "https://nx.dev",
-        "level": 0
+        "level": 5
       },
       "openai": {
         "title": "Open AI APIs",
@@ -110,7 +110,7 @@
         "proficiency": "upper-intermediate",
         "level": "B2"
       },
-      "uz": { 
+      "uz": {
         "title": "Uzbek",
         "value": "uz",
         "proficiency": "native",

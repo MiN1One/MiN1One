@@ -7,6 +7,7 @@ import { HiOutlineExternalLink } from 'react-icons/hi';
 import { SiGithub } from 'react-icons/si';
 import { useHomeContext } from '@client/contexts/HomeContext';
 import { IPortfolioData } from '@shared/types/home.types';
+import { EStackTypes } from '@shared/types/skill.types';
 
 const Portfolio: FC = () => {
   const [activeProject, setActiveProject] = useState<string | null>(null);
@@ -23,8 +24,8 @@ const Portfolio: FC = () => {
   const imageEls = useMemo(() => {
     return (project?.images as string[])?.map((image, index) => {
       return (
-        <figure 
-          key={index} 
+        <figure
+          key={index}
           className={classNames(classes.figure, 'fade')}
         >
           <img
@@ -43,14 +44,14 @@ const Portfolio: FC = () => {
   const projectEls = useMemo(() => {
     return projectKeys.map((key, index) => {
       const project = data.portfolio[key] as IPortfolioData;
-  
+
       return (
         <li
           tabIndex={0}
           key={key}
           aria-label={project.title}
           className={classNames(
-            classes.item, 
+            classes.item,
             classes[key],
             { [classes.active]: activeProject === key },
             'overlay overlay--color overlay--lg overlay--hover'
@@ -75,7 +76,7 @@ const Portfolio: FC = () => {
             tabIndex={0}
           >
             <span className={classes.label}>
-              {project.year}
+              {EStackTypes[project.type]}
             </span>
             <div className={classes.title}>
               <span>{project.title}</span>
@@ -109,7 +110,7 @@ const Portfolio: FC = () => {
       setActiveProject(upProjectkey);
     }
   }, [activeProject]);
-  
+
   return (
     <div className={classes.portfolio}>
       <Modal onClose={onCloseModal} open={!!activeProject}>
@@ -119,7 +120,7 @@ const Portfolio: FC = () => {
           </div>
         </div>
         <div className="btn-control-group">
-          <button 
+          <button
             title="Previous project"
             aria-label="Control Button"
             className="btn-control"
@@ -127,7 +128,7 @@ const Portfolio: FC = () => {
           >
             <BsChevronLeft />
           </button>
-          <button 
+          <button
             title="Next project"
             aria-label="Control Button"
             className="btn-control"
