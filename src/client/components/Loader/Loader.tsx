@@ -1,57 +1,83 @@
 import { useGlobalContext } from "@client/contexts/GlobalContext";
-import classNames from "classnames";
-import { FC, memo, useMemo } from "react";
-import { TypeAnimation } from "react-type-animation";
-import classes from './Loader.module.scss';
-import { getRandomElement, getRandomInt } from "@client/utils/random.utils";
-import SafeHydrate from "../Common/SafeHydrate";
 import { useHomeContext } from "@client/contexts/HomeContext";
+import { getRandomElement, randomUniqueIntBetween } from "@client/utils/random.utils";
+import classNames from "classnames";
+import { FC, memo, useEffect, useState } from "react";
+import SafeHydrate from "../Common/SafeHydrate";
+import classes from './Loader.module.scss';
+
+const LOADING_PROGRESS_RANGE = 15;
+const LOADING_PROGRESS_UPDATE_DELAY = 400;
+const LOADING_TEXT_UPDATE_DELAY = 1500;
+
+const getUniqueRandomNum = randomUniqueIntBetween();
 
 const Loader: FC = () => {
   const { data } = useHomeContext();
   const { setLoading, loading } = useGlobalContext();
-
   const { ui: uiConfig } = data;
+  const [loadingProgress, setLoadingProgress] = useState(0);
+  const [loadingText, setLoadingText] = useState(
+    getRandomElement(uiConfig.loader)
+  );
 
-  const animationSequence = useMemo(() => ([
-    100,
-    '*****************',
-    getRandomInt(2) * 100,
-    '*********************',
-    getRandomInt(2) * 100,
-    '******************************',
-    100,
-    '***********************************',
-    150,
-    '****************************************',
-    () => setLoading(false)
-  ]), []);
+  useEffect(() => {
+    let timeoutId: NodeJS.Timeout;
+
+    if (loadingProgress < 100) {
+      getUniqueRandomNum(
+        loadingProgress,
+        loadingProgress + LOADING_PROGRESS_RANGE
+      ).then(newProgress => {
+        timeoutId = setTimeout(() => {
+          setLoadingProgress(Math.min(newProgress, 100));
+        }, LOADING_PROGRESS_UPDATE_DELAY);
+      });
+    } else {
+      setTimeout(() => {
+        setLoading(false);
+      }, 2000);
+    }
+
+    return () => {
+      clearTimeout(timeoutId);
+    };
+  }, [loadingProgress]);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setLoadingText(getRandomElement(uiConfig.loader));
+    }, LOADING_TEXT_UPDATE_DELAY);
+
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, [uiConfig.loader]);
+
+  const hasLoaded = loadingProgress >= 100;
+
+  const activeClasses = {
+    [classes.active]: loading,
+    [classes.loaded]: hasLoaded
+  };
 
   return (
     <div className={classNames(
-      classes.loader, 
+      classes.loader,
       'overlay',
-      { [classes.active]: loading }
+      activeClasses
     )}>
       <div className={classes.textContent}>
         <SafeHydrate>
           <div className={classNames(
-            classes.label, 
+            classes.label,
             "text text--xl text--center"
           )}>
-            {getRandomElement(uiConfig.loader)}
+            {hasLoaded ? 'Ready to roll!🔥' : loadingText}
           </div>
         </SafeHydrate>
         <div className={classes.progress}>
-          [
-            <span className={classes.indicator}>
-              <TypeAnimation
-                sequence={animationSequence}
-                cursor={false}
-                speed={60}
-              />
-            </span>
-          ]
+          <span className={classes.indicator} style={{ width: `${loadingProgress}%` }} />
         </div>
       </div>
       <div className={classes.text}>

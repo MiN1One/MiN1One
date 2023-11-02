@@ -1,14 +1,13 @@
-import { FC, memo, useCallback } from "react";
-import { TypeAnimation } from "react-type-animation";
-import classes from './HomeContent.module.scss';
-import { stringToBinaryString } from '@shared/utils/string.utils';
-import { SiTypescript, SiJavascript, } from 'react-icons/si';
-import Footer from "../Footer/Footer";
-import { useHomeContext } from "@client/contexts/HomeContext";
 import { useGlobalContext } from "@client/contexts/GlobalContext";
+import { useHomeContext } from "@client/contexts/HomeContext";
 import classNames from "classnames";
+import { FC, memo, useCallback } from "react";
+import { SiJavascript, SiTypescript, } from 'react-icons/si';
+import { TypeAnimation } from "react-type-animation";
 import BgAnimation from "../BgAnimation/BgAnimation";
 import SafeHydrate from "../Common/SafeHydrate";
+import Footer from "../Footer/Footer";
+import classes from './HomeContent.module.scss';
 
 const HomeContent: FC = () => {
   const {
@@ -21,8 +20,6 @@ const HomeContent: FC = () => {
   const { media, loading } = useGlobalContext();
 
   const typingSequence = [
-    1000,
-    stringToBinaryString('Hello') + '!',
     1500,
     'Hello There!',
     () => setFinishedTyping(true),
@@ -35,23 +32,24 @@ const HomeContent: FC = () => {
     }
   }, [unscale.value, closeSections]);
 
-  const unscaleTransition = media.tablet 
-    ? 'transform .4s ease' 
-    : 'transform .7s ease';
+  const unscaleTransition = media.tablet
+    ? 'all .4s ease'
+    : 'all .7s ease';
 
   return (
-    <section 
+    <section
       className={classNames(classes.home, 'overlay')}
       onClick={onClickContent}
       style={
-        unscale 
+        unscale
           ? {
             transform: `scale(${1 - unscale.value})`,
-            transition: 
-              unscale.transition 
+            borderRadius: unscale.value > 0 && media.tablet ? '2.5rem' : 0,
+            transition:
+              unscale.transition
                 ? unscaleTransition
                 : undefined
-          } 
+          }
           : undefined
       }
     >

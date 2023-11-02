@@ -29,20 +29,24 @@
 
   &--plain {
     border-bottom: 1.5px solid var(--color-light);
-    padding-bottom: .5rem;
+    padding-bottom: 0.5rem;
   }
 
   &--arrow {
     svg {
       width: 0;
-      transition: width .3s ease;
-      margin-left: .5rem;
+      transition: width 0.3s ease;
+      margin-left: 0.5rem;
     }
 
-    &:hover svg { width: 2.15rem; }
+    &:hover svg {
+      width: 2.15rem;
+    }
 
     @include respond('mid') {
-      svg { width: 2.15rem; }
+      svg {
+        width: 2.15rem;
+      }
     }
   }
 }
@@ -63,8 +67,8 @@
   }
 
   span:not(:last-child)::after {
-    content: "\2022";
-    margin: 0 .75rem;
+    content: '\2022';
+    margin: 0 0.75rem;
     color: var(--color-grey);
     display: inline-block;
   }
@@ -87,7 +91,7 @@
 
   &--withIcon {
     svg {
-      margin-left: .65rem;
+      margin-left: 0.65rem;
       width: 1.6rem;
       height: 1.6rem;
       stroke: var(--color-grey);
@@ -105,15 +109,14 @@
 }
 
 .overlay {
-
   &::after {
     pointer-events: none;
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
     z-index: 1;
-    filter: contrast(.55);
+    filter: contrast(0.55);
     background-image: url('../../../static/images/dot.png');
     background-repeat: repeat;
     width: 100%;
@@ -126,14 +129,14 @@
   }
 
   &--color::after {
-    background-color: rgba(0,0,0,.75);
+    background-color: rgba(0, 0, 0, 0.75);
   }
 
   &--hover {
     &::after {
       opacity: 0;
       visibility: hidden;
-      transition: opacity .2s ease;
+      transition: opacity 0.2s ease;
     }
 
     &:hover::after {
@@ -144,7 +147,9 @@
 }
 
 @keyframes cursor {
-  50% { opacity: 0; }
+  50% {
+    opacity: 0;
+  }
 }
 
 .btn-control-group {
@@ -154,13 +159,16 @@
   display: flex;
   z-index: 10;
 
-  &--top { top: 4rem; }
+  &--top {
+    top: 4rem;
+  }
 
   @include respond('tablet') {
-    bottom: 2rem;
     right: 2rem;
 
-    &--top { top: 2rem; }
+    &--top {
+      top: 2rem;
+    }
   }
 }
 
@@ -171,7 +179,7 @@
   align-items: center;
   justify-content: center;
   background: var(--bg-primary);
-  transition: background .2s linear;
+  transition: background 0.2s linear;
 
   svg {
     width: 2rem;
@@ -181,6 +189,16 @@
 
   &:hover {
     background: var(--bg-dark);
+  }
+
+  @include respond('mid') {
+    width: 5rem;
+    height: 5rem;
+
+    svg {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
   }
 }
 
@@ -192,7 +210,9 @@
   position: relative;
   display: inline-block;
   overflow: hidden;
-  box-shadow: inset 0 0 .25rem rgba(0,0,0,.2), 0 0 1rem var(--color-success-opaque); 
+  box-shadow:
+    inset 0 0 0.25rem rgba(0, 0, 0, 0.2),
+    0 0 1rem var(--color-success-opaque);
   background: var(--color-grey);
 
   @include respond('tablet') {
@@ -201,7 +221,7 @@
   }
 }
 
-[data-active="true"] .indicator,
+[data-active='true'] .indicator,
 .indicator--active {
   background: var(--color-success);
 }
@@ -221,7 +241,7 @@
     color: var(--color-grey);
     font-weight: 400;
     letter-spacing: 2px;
-    border-bottom: 1px solid rgba(#fff, .3);
+    border-bottom: 1px solid rgba(#fff, 0.3);
     width: max-content;
 
     @include respond('desktop') {

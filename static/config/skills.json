@@ -2,6 +2,20 @@
   "technical": {
     "title": "Technical mastery:",
     "list": {
+      "rust": {
+        "title": "Rust",
+        "value": "rust",
+        "type": "lang",
+        "url": "https://www.rust-lang.org/learn",
+        "level": 0
+      },
+      "openai": {
+        "title": "Open AI APIs",
+        "value": "openai",
+        "type": "tool",
+        "url": "https://openai.com",
+        "level": 0
+      },
       "js": {
         "title": "JavaScript",
         "value": "js",
@@ -85,13 +99,6 @@
         "type": "framework",
         "url": "https://nx.dev",
         "level": 5
-      },
-      "openai": {
-        "title": "Open AI APIs",
-        "value": "openai",
-        "type": "tool",
-        "url": "https://openai.com",
-        "level": 0
       }
     }
   },

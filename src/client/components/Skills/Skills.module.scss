@@ -1,7 +1,6 @@
 @use '../../sass/mixins' as *;
 
 .skills {
-
   .list {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -47,7 +46,7 @@
     }
 
     &.node svg {
-      fill: #7dbb45
+      fill: #7dbb45;
     }
 
     &.nest svg {
@@ -77,7 +76,7 @@
 
   .label {
     font-size: 2rem;
-    margin-right: .65rem;
+    margin-right: 0.65rem;
   }
 
   .itemHead {
@@ -85,11 +84,11 @@
     flex-direction: column;
     align-items: flex-start;
   }
-  
+
   .titleGroup {
     display: flex;
     align-items: center;
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
   }
 
   .itemBody {
@@ -123,7 +122,9 @@
     }
   }
 
-  .item .itemHead .linkIcon { fill: none; }
+  .item .itemHead .linkIcon {
+    fill: none;
+  }
 
   .bodyGroup {
     display: flex;
@@ -143,6 +144,11 @@
     position: relative;
     margin-right: 3rem;
 
+    @include respond('mid') {
+      overflow: hidden;
+      border-radius: 0 10rem 10rem 0;
+    }
+
     @include respond('sm') {
       width: 70%;
       margin-right: 1.5rem;
@@ -151,8 +157,8 @@
     span {
       z-index: 1;
       background: var(--color-success);
-      opacity: .8;
-      box-shadow: 0 0 1rem var(--color-success-opaque);
+      opacity: 0.9;
+      box-shadow: 0 0 1.5rem var(--color-success-opaque);
     }
 
     span,
@@ -164,7 +170,7 @@
     }
 
     span::after {
-      content: "";
+      content: '';
       z-index: 2;
       background: url('../../../../static/images/dot.png');
       width: 100%;
@@ -173,7 +179,7 @@
 
   &.active .item:not(.learning) .progress span {
     width: var(--level);
-    animation-delay: calc(var(--slide-transition-duration) + .2s);
+    animation-delay: calc(var(--slide-transition-duration) + 0.2s);
     animation-timing-function: ease;
     animation-duration: 1s;
     animation-fill-mode: backwards;
@@ -205,6 +211,10 @@
 }
 
 @keyframes extend {
-  from { width: 0; }
-  to { width: var(--level); }
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--level);
+  }
 }

@@ -4,10 +4,10 @@
   display: flex;
   color: var(--color-light);
   width: max-content;
-  
+
   &:not(:last-child) {
     padding-bottom: 5rem;
-    border-bottom: 2.5px solid rgba(#fff,.225);
+    border-bottom: 2.5px solid rgba(#fff, 0.225);
     margin-bottom: 5rem;
   }
 
@@ -27,7 +27,7 @@
   .indicatorWrapper {
     position: relative;
     display: flex;
-    
+
     svg {
       width: 3rem;
       height: 3rem;
@@ -82,9 +82,9 @@
 
   .titleGroup {
     margin-bottom: 3rem;
-    
+
     & > *:not(:last-child) {
-      margin-bottom: .5rem;
+      margin-bottom: 0.5rem;
     }
 
     @include respond('sm') {
@@ -99,12 +99,12 @@
   .location {
     display: flex;
     align-items: center;
-    margin-top: .25rem;
+    margin-top: 0.25rem;
 
     svg {
       width: 1.85rem;
       height: 1.85rem;
-      margin-right: .5rem;
+      margin-right: 0.5rem;
     }
   }
 

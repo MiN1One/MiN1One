@@ -31,14 +31,14 @@ const ListItem: FC<ListItemProps> = (props) => {
     headlineItems = [],
     bulletPoints = [],
     icon,
-    iconBg, 
+    iconBg,
     children = null,
     secondaryIcon,
     ...restProps
   } = props;
 
   const locationEls = (
-    Array.isArray(location) 
+    Array.isArray(location)
       ? location.map((location, index) => (
         <span key={index}>{location}</span>
       ))
@@ -46,7 +46,7 @@ const ListItem: FC<ListItemProps> = (props) => {
   );
 
   const headlineEls = headlineItems.map((item, index) => (
-    <span key={index}>{item}</span>
+    <span key={index}>{item}{index !== headlineItems.length - 1 && ' - '}</span>
   ));
 
   const pointEls = bulletPoints.map((item, index) => (
@@ -61,17 +61,17 @@ const ListItem: FC<ListItemProps> = (props) => {
 
   const Icon = icon;
   const SecondaryIcon = secondaryIcon;
-  
+
   return createElement<{
     children: React.ReactNode,
     className: string;
     [key: string]: any;
   }>(
-    elementType, 
+    elementType,
     {
       ...restProps,
       className: classNames(
-        classes.item, 
+        classes.item,
         { [classes.fill]: !!iconBg }
       ),
       children: (

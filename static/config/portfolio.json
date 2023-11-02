@@ -1,4 +1,23 @@
 {
+  "uzbtrip": {
+    "title": "Uzbekistan Trip",
+    "link": "https://uzbtrip.com",
+    "year": 2023,
+    "github": {
+      "link": null,
+      "repo": null
+    },
+    "technologies": [],
+    "type": "FRONT_END",
+    "value": "uzbtrip",
+    "description": "",
+    "images": [
+      "/static/images/jpg/uzbtrip-1.jpg",
+      "/static/images/jpg/uzbtrip-2.jpg",
+      "/static/images/jpg/uzbtrip-3-mobile.jpg"
+    ],
+    "forSale": false
+  },
   "w180gradus": {
     "title": "180Gradus",
     "link": null,
@@ -21,6 +40,25 @@
       "/static/images/jpg/project_image_7-mobile.jpg"
     ],
     "forSale": true
+  },
+  "softit": {
+    "title": "Soft IT",
+    "link": "https://softit.uz",
+    "year": 2023,
+    "github": {
+      "link": null,
+      "repo": null
+    },
+    "technologies": [],
+    "type": "FRONT_END",
+    "value": "softit",
+    "description": "",
+    "images": [
+      "/static/images/jpg/project_image_37.jpg",
+      "/static/images/jpg/project_image_38.jpg",
+      "/static/images/jpg/project_image_39-mobile.jpg"
+    ],
+    "forSale": false
   },
   "weather-exp": {
     "title": "Weather App",
@@ -85,6 +123,25 @@
     ],
     "forSale": true
   },
+  "superio": {
+    "title": "Superio",
+    "link": "https://jobfront.inminternational.uz",
+    "year": 2023,
+    "github": {
+      "link": null,
+      "repo": null
+    },
+    "technologies": [],
+    "type": "FRONT_END",
+    "value": "superio",
+    "description": "",
+    "images": [
+      "/static/images/jpg/superio-1.jpg",
+      "/static/images/jpg/superio-2.jpg",
+      "/static/images/jpg/superio-3-mobile.jpg"
+    ],
+    "forSale": false
+  },
   "sbuy": {
     "title": "Sbuy Marketplace",
     "link": null,
@@ -106,63 +163,6 @@
       "/static/images/jpg/project_image_36-mobile.jpg"
     ],
     "forSale": true
-  },
-  "softit": {
-    "title": "Soft IT",
-    "link": "https://softit.uz",
-    "year": 2023,
-    "github": {
-      "link": null,
-      "repo": null
-    },
-    "technologies": [],
-    "type": "FRONT_END",
-    "value": "softit",
-    "description": "",
-    "images": [
-      "/static/images/jpg/project_image_37.jpg",
-      "/static/images/jpg/project_image_38.jpg",
-      "/static/images/jpg/project_image_39-mobile.jpg"
-    ],
-    "forSale": false
-  },
-  "uzbtrip": {
-    "title": "Uzbekistan Trip",
-    "link": "https://uzbtrip.com",
-    "year": 2023,
-    "github": {
-      "link": null,
-      "repo": null
-    },
-    "technologies": [],
-    "type": "FRONT_END",
-    "value": "uzbtrip",
-    "description": "",
-    "images": [
-      "/static/images/jpg/uzbtrip-1.jpg",
-      "/static/images/jpg/uzbtrip-2.jpg",
-      "/static/images/jpg/uzbtrip-3-mobile.jpg"
-    ],
-    "forSale": false
-  },
-  "superio": {
-    "title": "Superio",
-    "link": "https://jobfront.inminternational.uz",
-    "year": 2023,
-    "github": {
-      "link": null,
-      "repo": null
-    },
-    "technologies": [],
-    "type": "FRONT_END",
-    "value": "superio",
-    "description": "",
-    "images": [
-      "/static/images/jpg/superio-1.jpg",
-      "/static/images/jpg/superio-2.jpg",
-      "/static/images/jpg/superio-3-mobile.jpg"
-    ],
-    "forSale": false
   },
   "bugatchi": {
     "title": "Bugatchi",

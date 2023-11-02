@@ -9,13 +9,14 @@
   top: 0;
   opacity: 0;
   visibility: hidden;
-  
+
   .label {
     margin-bottom: 2rem;
     max-width: 100%;
     padding: 0 1rem;
+    font-weight: 600;
   }
-  
+
   .textContent {
     position: relative;
     top: 40%;
@@ -23,32 +24,28 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    gap: 0.5rem;
   }
 
   .progress {
-    width: 40rem;
-    justify-content: space-between;
-    display: flex;
-    align-items: center;
-    font-size: 1.75rem;
-    color: var(--color-light);
+    width: 45rem;
     position: relative;
+    border: 0.6rem solid rgba(#fff, 0.9);
+    border-radius: 10rem;
+    overflow: hidden;
+    transition: box-shadow 0.5s ease;
 
     @include respond('xs') {
       width: 30rem;
     }
   }
-  
+
   .indicator {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
-    width: 95%;
-    overflow: hidden;
-    animation: progress 4s linear;
-    display: inline-block;
+    width: 100%;
+    height: 1.35rem;
+    background: var(--color-secondary);
+    display: block;
+    transition: width 0.5s ease;
   }
 
   .text {
@@ -66,5 +63,9 @@
   &.active {
     opacity: 1;
     visibility: visible;
+  }
+
+  &.loaded .progress {
+    box-shadow: 0 0 3rem rgba(#fff, 0.4);
   }
 }

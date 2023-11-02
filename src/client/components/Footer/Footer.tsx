@@ -49,7 +49,7 @@ const Footer: FC = () => {
           <TypeAnimation
             sequence={typingSequence}
             className={classNames(
-              "text text--italic type-cursor", 
+              "text text--italic type-cursor",
               classes.quote
             )}
             wrapper="p"
@@ -59,13 +59,13 @@ const Footer: FC = () => {
         )}
       </div>
       <div className={classes.content}>
-        <ul className={classes.list}>
-          {linkEls}
-        </ul>
         <p>
           <span>MiN1One</span>&nbsp;
           <span>Dev. {currentYear}</span>
         </p>
+        <ul className={classes.list}>
+          {linkEls}
+        </ul>
       </div>
     </div>
   );

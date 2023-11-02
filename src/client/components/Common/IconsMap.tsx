@@ -1,3 +1,5 @@
+import { GiGraduateCap } from 'react-icons/gi';
+import { RiCompasses2Line } from 'react-icons/ri';
 import {
   SiExpress,
   SiGithub,
@@ -9,6 +11,7 @@ import {
   SiNodedotjs,
   SiReact,
   SiRedux,
+  SiRust,
   SiSass,
   SiShopify,
   SiTelegram,
@@ -16,17 +19,17 @@ import {
   SiWebpack,
   SiYoutube
 } from 'react-icons/si';
+import { TfiEmail } from 'react-icons/tfi';
 import CustomIcon from './CustomIcon';
 import EpamLogo from './EpamLogo';
 import LlamaLogo from './LlamaLogo';
-import { RiCompasses2Line } from 'react-icons/ri';
-import WebsterLogo from './WebsterLogo';
-import { GiGraduateCap } from 'react-icons/gi';
-import { TfiEmail } from 'react-icons/tfi';
 import { NxjsLogo } from './NxjsLogo';
 import { OpenAiLogo } from './OpenAiLogo';
+import WebsterLogo from './WebsterLogo';
 
-export const linkIconsMap = {
+type ElementsRecord = Record<string, React.ComponentType>;
+
+export const linkIconsMap: ElementsRecord = {
   linkedin: SiLinkedin,
   telegram: SiTelegram,
   github: SiGithub,
@@ -34,11 +37,12 @@ export const linkIconsMap = {
   youtube: SiYoutube,
 };
 
-export const skillIconsMap = {
+export const skillIconsMap: ElementsRecord = {
   nest: SiNestjs,
   'react-next': SiReact,
   node: SiNodedotjs,
   express: SiExpress,
+  rust: SiRust,
   'redux-zustand': SiRedux,
   webpack: SiWebpack,
   'mongo-goose': SiMongodb,
@@ -53,17 +57,17 @@ export const skillIconsMap = {
   uz: () => <CustomIcon name="uz" />,
 };
 
-export const experienceIconsMap = {
+export const experienceIconsMap: ElementsRecord = {
   epam: EpamLogo,
   llama: LlamaLogo,
   freelance: RiCompasses2Line,
   webster: WebsterLogo,
 };
 
-export const miscUiIconsMap = {
+export const miscUiIconsMap: ElementsRecord = {
   graduate: GiGraduateCap
 }
 
-export const contactInfoIconsMap = {
+export const contactInfoIconsMap: ElementsRecord = {
   email: TfiEmail
 };
