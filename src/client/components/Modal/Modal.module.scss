@@ -3,9 +3,9 @@
   top: 0;
   left: 0;
   width: 100.25%;
-  height: 100vh;
+  height: var(--header-height);
   z-index: 999;
-  transition: opacity .4s ease-in;
+  transition: opacity 0.4s ease-in;
   opacity: 0;
   visibility: hidden;
   background: var(--bg-dark-transparent);
