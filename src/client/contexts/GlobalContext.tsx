@@ -1,9 +1,11 @@
 import useMedia from "@client/hooks/useMedia";
+import { debounce } from "@client/utils/throttle.utils";
+import { StateSetter } from '@shared/types/common.types';
 import React, {
-  createContext, FC, useContext,
+  createContext, FC, useCallback, useContext,
+  useEffect,
   useState
 } from "react";
-import { StateSetter } from '@shared/types/common.types';
 
 interface IGlobalContext {
   media: Record<string, boolean>;
@@ -15,7 +17,7 @@ interface IGlobalContext {
 
 const Context = createContext({} as IGlobalContext);
 
-export const GlobalContextProvider: FC<{ children: React.ReactNode }> = 
+export const GlobalContextProvider: FC<{ children: React.ReactNode }> =
   ({ children }) => {
     const [loading, setLoading] = useState(true);
     const [cssVariables, setCssVariables] = useState<Record<string, string>>({});
@@ -24,6 +26,24 @@ export const GlobalContextProvider: FC<{ children: React.ReactNode }> =
       ['mobile', 'only screen and (max-width: 48em)', false],
       ['tablet', 'only screen and (max-width: 64em)', false],
     );
+
+    const getWindowHeight = useCallback(
+      debounce(() => {
+        document.documentElement.style.setProperty(
+          '--header-height',
+          `${window.innerHeight}px`
+        );
+      }, 500),
+      []
+    );
+
+    useEffect(() => {
+      getWindowHeight();
+      window.addEventListener('resize', getWindowHeight);
+      return () => {
+        window.removeEventListener('resize', getWindowHeight);
+      };
+    }, [getWindowHeight]);
 
     const state: IGlobalContext = {
       media,
