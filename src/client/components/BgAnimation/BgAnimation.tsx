@@ -80,9 +80,12 @@ const BgAnimation: FC = () => {
         setCanvasContext();
       }
       renderDropLets();
-    } else if (intervalIdRef.current) {
+    } else {
       clearTimeout(intervalIdRef.current);
     }
+    return () => {
+      clearTimeout(intervalIdRef.current);
+    };
   }, [activeSection, media]);
 
   useEffect(() => {
