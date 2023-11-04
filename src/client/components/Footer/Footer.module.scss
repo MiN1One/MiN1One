@@ -12,7 +12,7 @@
   }
 
   @include respond('mid') {
-    bottom: 7rem;
+    bottom: 2rem;
     display: flex;
     flex-direction: column-reverse;
   }
