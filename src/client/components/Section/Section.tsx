@@ -1,3 +1,8 @@
+import { useGlobalContext } from "@client/contexts/GlobalContext";
+import { useHomeContext } from "@client/contexts/HomeContext";
+import { debounce } from "@client/utils/throttle.utils";
+import { ISectionData } from "@shared/types/home.types";
+import classNames from "classnames";
 import React, {
   FC,
   memo,
@@ -9,13 +14,8 @@ import React, {
   useRef,
   useState,
 } from "react";
-import classes from './Section.module.scss';
-import classNames from "classnames";
-import { useGlobalContext } from "@client/contexts/GlobalContext";
 import { SlInfo } from 'react-icons/sl';
-import { useHomeContext } from "@client/contexts/HomeContext";
-import { ISectionData } from "@shared/types/home.types";
-import { debounce } from "@client/utils/throttle.utils";
+import classes from './Section.module.scss';
 
 const SLIDE_CLOSE_AT_PERCENT = +process.env.NEXT_PUBLIC_SLIDE_CLOSE_AT_PERCENT;
 const SLIDE_FINISH_AT_PERCENT = +process.env.NEXT_PUBLIC_SLIDE_FINISH_AT_PERCENT;
@@ -74,8 +74,8 @@ const Section: FC<
     const currentMousePosition = mousePos;
     const translateSize = currentMousePosition - mouseClickPosition.current;
     setUnscaleValue(
-      currentMousePosition / 
-      mouseClickPosition.current * 
+      currentMousePosition /
+      mouseClickPosition.current *
       MAX_OUTSIDE_CONTENT_UNSCALE_SIZE
     );
     if (translateSize <= 2) {
@@ -121,18 +121,18 @@ const Section: FC<
     }
   }, [onSlide]);
 
-  const slideTransition = media.tablet 
-    ? SLIDE_TRANSITION_DURATION_MOBILE 
+  const slideTransition = media.tablet
+    ? SLIDE_TRANSITION_DURATION_MOBILE
     : SLIDE_TRANSITION_DURATION;
 
   const onTransionEnd = useCallback(
     (e: TransitionEvent<HTMLDivElement>) => {
       if (
-        e.propertyName === 'left' && 
+        e.propertyName === 'left' &&
         e.elapsedTime >= slideTransition
       ) {
         if (
-          (media.tablet && !active && !activeSection) || 
+          (media.tablet && !active && !activeSection) ||
           (!media.tablet && activeSection === 'home')
         ) {
           setTranslateValue(0);
@@ -174,7 +174,7 @@ const Section: FC<
   );
 
   const containerClasses = classNames(
-    classes.section, 
+    classes.section,
     classes[type],
     {
       [classes.active]: active,
@@ -190,8 +190,8 @@ const Section: FC<
   );
 
   return (
-    <section 
-      className={containerClasses} 
+    <section
+      className={containerClasses}
       {...(fixedSlide ? {} : {
         onMouseUp,
         'data-dragging': mouseDown?.toString(),
@@ -199,11 +199,11 @@ const Section: FC<
         onTouchEnd: onTouchEnd,
         ...(media.tablet ? {
           onTouchStart: onMouseDown,
-        }: {}),
+        } : {}),
         style: {
           transform: `translateX(${translate.value}px)`,
-          transition: translate.transition 
-            ? `all ${slideTransition}s ease ` 
+          transition: translate.transition
+            ? `all ${slideTransition}s ease `
             : undefined
         },
       })}
@@ -212,14 +212,14 @@ const Section: FC<
         {showTitle && section.title && (
           <div className={classes.head}>
             <h3 className={classNames(
-              "heading heading--secondary", 
+              "heading heading--secondary",
               classes.heading
             )}>
               {section.title}
             </h3>
             {section.subtitle && (
               <p className={classNames(
-                classes.subtitle, 
+                classes.subtitle,
                 "text text--sub text--lg"
               )}>
                 {section.subtitle}

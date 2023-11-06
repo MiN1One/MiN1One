@@ -44,7 +44,7 @@ const HomeContent: FC = () => {
         unscale
           ? {
             transform: `scale(${1 - unscale.value})`,
-            borderRadius: unscale.value > 0 && media.tablet ? '2.5rem' : 0,
+            borderRadius: unscale.value > 0 && media.tablet ? '2.75rem' : 0,
             transition:
               unscale.transition
                 ? unscaleTransition

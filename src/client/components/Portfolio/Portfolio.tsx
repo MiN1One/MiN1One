@@ -1,19 +1,29 @@
-import { FC, memo, useCallback, useMemo, useRef, useState } from 'react';
-import classes from './Portfolio.module.scss';
-import Modal from '../Modal/Modal';
-import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
-import classNames from 'classnames';
-import { HiOutlineExternalLink } from 'react-icons/hi';
-import { SiGithub } from 'react-icons/si';
 import { useHomeContext } from '@client/contexts/HomeContext';
 import { IPortfolioData } from '@shared/types/home.types';
 import { EStackTypes } from '@shared/types/skill.types';
+import classNames from 'classnames';
+import { FC, memo, useCallback, useMemo, useRef, useState } from 'react';
+import { BsChevronLeft, BsChevronRight } from 'react-icons/bs';
+import { HiOutlineExternalLink } from 'react-icons/hi';
+import { SiGithub } from 'react-icons/si';
+import { ImageWithLoader } from '../Common/ImageWithLoader';
+import Modal from '../Modal/Modal';
+import classes from './Portfolio.module.scss';
 
 const Portfolio: FC = () => {
   const [activeProject, setActiveProject] = useState<string | null>(null);
   const { data } = useHomeContext();
   const modalContentRef = useRef<HTMLDivElement>();
-  const projectKeys = Object.keys(data.portfolio);
+
+  const { projectKeys, projectIndex } = useMemo(() => {
+    const projectKeys = Object.keys(data.portfolio);
+    return {
+      projectKeys,
+      projectIndex: projectKeys.indexOf(activeProject)
+    }
+  }, [data, activeProject]);
+
+  const projectsListRef = useRef<HTMLUListElement>(null);
 
   const onCloseModal = useCallback(() => {
     setActiveProject(null);
@@ -28,10 +38,12 @@ const Portfolio: FC = () => {
           key={index}
           className={classNames(classes.figure, 'fade')}
         >
-          <img
-            className={classNames(classes.image, {
-              [classes.mobile]: image.includes('-mobile'),
-            })}
+          <ImageWithLoader
+            loadingClass={classes.loader}
+            className={classNames(
+              classes.image,
+              { [classes.mobile]: image.includes('-mobile') },
+            )}
             src={image}
             alt={`${project.title} Image ${index}`}
             draggable={false}
@@ -40,6 +52,7 @@ const Portfolio: FC = () => {
       );
     });
   }, [data, activeProject]);
+
 
   const projectEls = useMemo(() => {
     return projectKeys.map((key, index) => {
@@ -82,7 +95,9 @@ const Portfolio: FC = () => {
               <span>{project.title}</span>
             </div>
             <figure className={classes.figure}>
-              <img
+              <ImageWithLoader
+                loadingClass={classes.loader}
+                // root={projectsListRef.current}
                 className={classes.image}
                 src={project.images[0]}
                 alt={`${project.title} Image ${index}`}
@@ -103,10 +118,7 @@ const Portfolio: FC = () => {
       control === 'next' ? activeProjectIndex + 1 : activeProjectIndex - 1
     ];
     if (upProjectkey in data.portfolio) {
-      modalContentRef.current.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
+      modalContentRef.current.scrollTo({ top: 0 });
       setActiveProject(upProjectkey);
     }
   }, [activeProject]);
@@ -121,6 +133,7 @@ const Portfolio: FC = () => {
         </div>
         <div className="btn-control-group">
           <button
+            disabled={projectIndex === 0}
             title="Previous project"
             aria-label="Control Button"
             className="btn-control"
@@ -128,7 +141,20 @@ const Portfolio: FC = () => {
           >
             <BsChevronLeft />
           </button>
+          {project && (
+            <a
+              href={project.github.link ? project.github.link : project.link}
+              rel="noopener noreferrer"
+              target="_blank"
+              title={project.title}
+              className={classes.projectLabel}
+            >
+              {project.title}
+              <HiOutlineExternalLink />
+            </a>
+          )}
           <button
+            disabled={projectIndex === projectKeys.length - 1}
             title="Next project"
             aria-label="Control Button"
             className="btn-control"
@@ -138,7 +164,7 @@ const Portfolio: FC = () => {
           </button>
         </div>
       </Modal>
-      <ul className={classes.list}>
+      <ul className={classes.list} ref={projectsListRef}>
         {projectEls}
       </ul>
     </div>

@@ -30,7 +30,7 @@ const Loader: FC = () => {
         loadingProgress + LOADING_PROGRESS_RANGE
       ).then(newProgress => {
         timeoutId = setTimeout(() => {
-          setLoadingProgress(Math.min(newProgress, 100));
+          setLoadingProgress(Math.min(newProgress + 1, 100));
         }, LOADING_PROGRESS_UPDATE_DELAY);
       });
     } else {
@@ -56,16 +56,11 @@ const Loader: FC = () => {
 
   const hasLoaded = loadingProgress >= 100;
 
-  const activeClasses = {
-    [classes.active]: loading,
-    [classes.loaded]: hasLoaded
-  };
-
   return (
     <div className={classNames(
       classes.loader,
       'overlay',
-      activeClasses
+      { [classes.active]: loading }
     )}>
       <div className={classes.textContent}>
         <SafeHydrate>
@@ -76,8 +71,11 @@ const Loader: FC = () => {
             {hasLoaded ? 'Ready to roll!🔥' : loadingText}
           </div>
         </SafeHydrate>
-        <div className={classes.progress}>
-          <span className={classes.indicator} style={{ width: `${loadingProgress}%` }} />
+        <div className={classNames(
+          classes.progress, 'progress',
+          { loaded: hasLoaded }
+        )}>
+          <span className="progress__indicator" style={{ width: `${loadingProgress}%` }} />
         </div>
       </div>
       <div className={classes.text}>
