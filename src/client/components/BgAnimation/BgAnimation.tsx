@@ -81,10 +81,10 @@ const BgAnimation: FC = () => {
       }
       renderDropLets();
     } else {
-      clearTimeout(intervalIdRef.current);
+      clearInterval(intervalIdRef.current);
     }
     return () => {
-      clearTimeout(intervalIdRef.current);
+      clearInterval(intervalIdRef.current);
     };
   }, [activeSection, media]);
 
