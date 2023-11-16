@@ -108,20 +108,17 @@ const Portfolio: FC = () => {
         </li>
       );
     });
-  }, [data]);
+  }, [data.portfolio]);
 
   const onControlsClick = useCallback((control: 'next' | 'prev') => {
-    const activeProjectIndex = projectKeys.findIndex(key => (
-      key === activeProject
-    ));
     const upProjectkey = projectKeys[
-      control === 'next' ? activeProjectIndex + 1 : activeProjectIndex - 1
+      control === 'next' ? projectIndex + 1 : projectIndex - 1
     ];
     if (upProjectkey in data.portfolio) {
       modalContentRef.current.scrollTo({ top: 0 });
       setActiveProject(upProjectkey);
     }
-  }, [activeProject]);
+  }, [activeProject, projectKeys, projectIndex]);
 
   return (
     <div className={classes.portfolio}>

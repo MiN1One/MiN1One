@@ -1,17 +1,23 @@
-import { FC, useMemo } from "react";
-import moment from 'moment';
-import classes from './Experience.module.scss';
-import { EWorkMode, IEducationData, IExperienceData, } from '@shared/types/home.types';
-import ListItem from "../ListItem/ListItem";
-import { experienceIconsMap, miscUiIconsMap, } from '@client/components/Common/IconsMap';
+import { experienceIconsMap } from '@client/components/Common/IconsMap';
 import { useHomeContext } from "@client/contexts/HomeContext";
+import { EWorkMode, IEducationData, IExperienceData, } from '@shared/types/home.types';
+import moment from 'moment';
+import { FC, useMemo } from "react";
+import ListItem from "../ListItem/ListItem";
+import classes from './Experience.module.scss';
 
 
 const Experience: FC = () => {
   const { data } = useHomeContext();
 
-  const experienceKeys = Object.keys(data.experience);
-  const educationKeys = Object.keys(data.education);
+  const experienceKeys = useMemo(
+    () => Object.keys(data.experience),
+    [data.experience]
+  );
+  const educationKeys = useMemo(
+    () => Object.keys(data.education),
+    [data.education]
+  );
 
   const expereinceEls = useMemo(() => {
     return experienceKeys.map(key => {
@@ -20,17 +26,17 @@ const Experience: FC = () => {
       const from = moment(experienceItem.from);
       const to = moment(experienceItem.to || undefined);
       let months = to.diff(from, 'months') + 1, years: number;
-  
+
       if (months >= 12) {
         years = Math.floor(months / 12);
         months = months % 12;
       }
-  
+
       const subtitle = `
         from ${from.format('MMMM YYYY')}
         ${experienceItem.to ? ' to ' + to.format('MMMM YYYY') : ' till now'} (${years > 0 ? `${years} year${years > 1 ? 's ' : ' '} ` : ''}${months > 0 ? `${months} month${months > 1 ? 's' : ''}` : ''})
       `;
-  
+
       return (
         <ListItem
           key={key}
@@ -46,14 +52,14 @@ const Experience: FC = () => {
         />
       );
     });
-  }, [data]);
+  }, [experienceKeys]);
 
   const educationEls = useMemo(() => {
     return educationKeys.map(key => {
       const education = data.education[key] as IEducationData;
       const startDate = moment(education.startDate);
       const endDate = moment(education.endDate);
-  
+
       return (
         <ListItem
           key={key}
@@ -68,7 +74,7 @@ const Experience: FC = () => {
         />
       );
     });
-  }, [data]);
+  }, [educationKeys]);
 
   return (
     <div className={classes.experience}>

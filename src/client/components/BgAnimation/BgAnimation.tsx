@@ -80,8 +80,6 @@ const BgAnimation: FC = () => {
         setCanvasContext();
       }
       renderDropLets();
-    } else {
-      clearInterval(intervalIdRef.current);
     }
     return () => {
       clearInterval(intervalIdRef.current);
@@ -95,9 +93,7 @@ const BgAnimation: FC = () => {
     };
   }, []);
 
-  const canvasEl = useMemo(() => <canvas ref={canvasRef} />, []);
-
-  return canvasEl;
+  return useMemo(() => <canvas ref={canvasRef} />, []);
 };
 
 export default memo(withSafeHydration(BgAnimation));

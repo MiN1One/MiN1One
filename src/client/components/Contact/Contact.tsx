@@ -1,22 +1,21 @@
-import { FC, memo, useMemo } from "react";
-import classes from './Contact.module.scss';
 import {
   contactInfoIconsMap,
   linkIconsMap,
 } from '@client/components/Common/IconsMap';
-import classNames from "classnames";
 import { useHomeContext } from "@client/contexts/HomeContext";
 import { IContactData, ILinkData, } from '@shared/types/home.types';
+import classNames from "classnames";
+import { FC, memo, useMemo } from "react";
+import classes from './Contact.module.scss';
 
 const infoLinkPrefixesMap = {
   email: 'mailto:',
 };
 
 const Contact: FC = () => {
-  const { data } = useHomeContext();
+  const { data, linkKeys } = useHomeContext();
 
-  const linkKeys = Object.keys(data.links);
-  const contactInfoKeys = Object.keys(data.contact);
+  const contactInfoKeys = useMemo(() => Object.keys(data.contact), [data.contact]);
 
   const contactInfoEls = useMemo(() => {
     return contactInfoKeys.map(key => {
@@ -45,13 +44,13 @@ const Contact: FC = () => {
         </li>
       );
     });
-  }, [data]); 
+  }, [contactInfoKeys]);
 
   const linkEls = useMemo(() => {
     return linkKeys.map(key => {
       const link = data.links[key] as ILinkData;
       const Icon = linkIconsMap[key];
-  
+
       return (
         <li
           key={key}
@@ -71,7 +70,7 @@ const Contact: FC = () => {
         </li>
       );
     });
-  }, []); 
+  }, [linkKeys, data.links]);
 
   return (
     <div className={classes.contact}>
@@ -85,13 +84,13 @@ const Contact: FC = () => {
       </div>
       <div className={classes.footer}>
         <span className="text--sm text">
-          Powered by NestJS & NextJS 
+          Powered by NestJS & NextJS
         </span>
-        <a 
+        <a
           rel="noreferrer noopener"
           target="_blank"
-          href={data.urls.sourceCodeUrl} 
-          className="text text--mid" 
+          href={data.urls.sourceCodeUrl}
+          className="text text--mid"
           title="Portfolio Source Code"
         >
           <i style={{ color: 'var(--color-secondary)' }}>

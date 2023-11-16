@@ -14,8 +14,14 @@ const Skills: FC<SectionProps> = ({ active }) => {
   const { data: { skills } } = useHomeContext();
   const { media } = useGlobalContext();
 
-  const technicalSkillKeys = Object.keys(skills.technical.list);
-  const lingualSkillKeys = Object.keys(skills.lingual.list);
+  const technicalSkillKeys = useMemo(
+    () => Object.keys(skills.technical.list),
+    [skills.technical.list]
+  );
+  const lingualSkillKeys = useMemo(
+    () => Object.keys(skills.lingual.list),
+    [skills.lingual.list]
+  );
 
   const lingualSkillEls = useMemo(() => {
     return lingualSkillKeys.map(key => {
@@ -50,7 +56,7 @@ const Skills: FC<SectionProps> = ({ active }) => {
         </li>
       );
     });
-  }, [skills]);
+  }, [lingualSkillKeys]);
 
   const technicalSkillEls = useMemo(() => {
     return technicalSkillKeys.map((key) => {
@@ -58,10 +64,10 @@ const Skills: FC<SectionProps> = ({ active }) => {
       let Icon = skillIconsMap[key];
       const learning = skill.level === 0;
       return (
-        <li 
+        <li
           className={classNames(
-            classes.item, 
-            classes[key], 
+            classes.item,
+            classes[key],
             { [classes.learning]: learning }
           )}
           key={key}
@@ -100,7 +106,7 @@ const Skills: FC<SectionProps> = ({ active }) => {
             {Icon && <Icon />}
             <div className={classes.bodyGroup}>
               <div className={classes.progress}>
-                <span 
+                <span
                   style={{
                     '--level': `${skill.level / 10 * 100}%`,
                   } as CSSProperties}
@@ -114,7 +120,7 @@ const Skills: FC<SectionProps> = ({ active }) => {
         </li>
       );
     });
-  }, [media.small, skills]);
+  }, [media.small, technicalSkillKeys]);
 
   return (
     <div className={classNames(

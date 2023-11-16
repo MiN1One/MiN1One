@@ -1,14 +1,16 @@
-import {
-  FC,
-  createContext, useState,
-  useCallback,
-  useContext,
-  useEffect
-} from 'react';
 import { StateSetter } from '@shared/types/common.types';
 import { IHomeData } from '@shared/types/home.types';
-import { useGlobalContext, } from './GlobalContext';
 import { NextPage } from 'next';
+import {
+  FC,
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useState
+} from 'react';
+import { useGlobalContext, } from './GlobalContext';
 
 interface IHomeContext {
   finishedTyping: boolean;
@@ -22,6 +24,8 @@ interface IHomeContext {
     value: number;
     transition: boolean;
   };
+  sectionKeys: (keyof IHomeData)[];
+  linkKeys: string[];
   setUnscaleValue: (val: number, transition?: boolean) => void;
 }
 
@@ -46,7 +50,16 @@ export const HomeContextProvider: FC<HomeContextProps> = (props) => {
   const [data, setData] = useState(initialData);
   const { media, } = useGlobalContext();
 
-  const firstSection = Object.keys(initialData.sections)[0];
+  const sectionKeys = useMemo(
+    () => Object.keys(initialData?.sections || {}) as (keyof IHomeData)[],
+    [initialData.sections]
+  );
+  const linkKeys = useMemo(
+    () => Object.keys(initialData?.links || {}),
+    [initialData.links]
+  );
+
+  const firstSection = sectionKeys[0];
 
   const [activeSection, setActiveSection] = useState<null | string>(firstSection);
 
@@ -75,7 +88,7 @@ export const HomeContextProvider: FC<HomeContextProps> = (props) => {
   useEffect(() => {
     if (activeSection && activeSection !== 'home') {
       setUnscaleValue(
-        MAX_OUTSIDE_CONTENT_UNSCALE_SIZE, 
+        MAX_OUTSIDE_CONTENT_UNSCALE_SIZE,
         true
       );
     }
@@ -84,13 +97,15 @@ export const HomeContextProvider: FC<HomeContextProps> = (props) => {
   const state: IHomeContext = {
     finishedTyping,
     setFinishedTyping,
-    data, 
+    data,
     setData,
     activeSection,
     setActiveSection,
     closeSections,
     setUnscaleValue,
+    sectionKeys,
     unscale,
+    linkKeys,
   };
 
   return (
@@ -105,7 +120,7 @@ export const withHomeContext = (Cmp: NextPage) => (
     return (
       <HomeContextProvider initialData={data}>
         <Cmp />
-      </HomeContextProvider> 
+      </HomeContextProvider>
     )
   }
 );
