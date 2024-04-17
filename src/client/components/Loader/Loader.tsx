@@ -6,8 +6,8 @@ import { FC, memo, useEffect, useState } from "react";
 import SafeHydrate from "../Common/SafeHydrate";
 import classes from './Loader.module.scss';
 
-const LOADING_PROGRESS_RANGE = 15;
-const LOADING_PROGRESS_UPDATE_DELAY = 400;
+const LOADING_PROGRESS_RANGE = 35;
+const LOADING_PROGRESS_UPDATE_DELAY = 300;
 const LOADING_TEXT_UPDATE_DELAY = 1500;
 
 const getUniqueRandomNum = randomUniqueIntBetween();

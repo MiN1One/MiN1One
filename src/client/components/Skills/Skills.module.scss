@@ -5,11 +5,10 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     row-gap: 4.5rem;
-    column-gap: 4rem;
+    column-gap: 2.5rem;
 
     @include respond('desktop') {
       row-gap: 3rem;
-      column-gap: 2rem;
     }
 
     @include respond('tablet') {
@@ -143,6 +142,7 @@
     flex-shrink: 1;
     position: relative;
     margin-right: 3rem;
+    flex-grow: 1;
 
     @include respond('mid') {
       overflow: hidden;

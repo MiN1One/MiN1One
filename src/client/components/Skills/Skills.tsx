@@ -1,14 +1,14 @@
+import { skillIconsMap } from '@client/components/Common/IconsMap';
+import { useGlobalContext } from "@client/contexts/GlobalContext";
+import { useHomeContext } from "@client/contexts/HomeContext";
+import { ELingualProficiency, ESkillProficiency, ESkillType, ISkillItem } from '@shared/types/skill.types';
+import { matchSkillLevelToProficiency } from "@shared/utils/me.utils";
+import classNames from "classnames";
 import { CSSProperties, FC, memo, useMemo } from "react";
 import { HiOutlineExternalLink } from "react-icons/hi";
-import classes from './Skills.module.scss';
-import classNames from "classnames";
-import { ELingualProficiency, ESkillProficiency, ESkillType, ISkillItem } from '@shared/types/skill.types';
-import { skillIconsMap } from '@client/components/Common/IconsMap';
-import { matchSkillLevelToProficiency } from "@shared/utils/me.utils";
-import { useHomeContext } from "@client/contexts/HomeContext";
-import { useGlobalContext } from "@client/contexts/GlobalContext";
-import { SectionProps } from '../Section/Section';
 import SafeHydrate from "../Common/SafeHydrate";
+import { SectionProps } from '../Section/Section';
+import classes from './Skills.module.scss';
 
 const Skills: FC<SectionProps> = ({ active }) => {
   const { data: { skills } } = useHomeContext();
@@ -26,7 +26,6 @@ const Skills: FC<SectionProps> = ({ active }) => {
   const lingualSkillEls = useMemo(() => {
     return lingualSkillKeys.map(key => {
       const skill = skills.lingual.list[key] as ISkillItem;
-      const Icon = skillIconsMap[key];
       return (
         <li
           key={key}
@@ -34,7 +33,6 @@ const Skills: FC<SectionProps> = ({ active }) => {
           className={classes.item}
         >
           <div className={classes.itemBody}>
-            {Icon && <Icon />}
             <div>
               <div className={classes.titleGroup}>
                 <span className={classes.label}>
