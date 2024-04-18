@@ -13,8 +13,8 @@ const Document = () => (
       <meta name="msapplication-TileColor" content="#da532c" />
       <meta name="msapplication-config" content="/static/favicon/browserconfig.xml" />
       <meta name="theme-color" content="#ffffff" />
-      <link 
-        rel="stylesheet" 
+      <link
+        rel="stylesheet"
         href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.css"
       />
       <link
@@ -27,7 +27,7 @@ const Document = () => (
         crossOrigin="anonymous"
       />
       <link
-        href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap"
         rel="stylesheet"
       />
       <link href="/static/fonts/style.css" rel="stylesheet" />

@@ -60,6 +60,29 @@
     ],
     "forSale": false
   },
+  "prisunion": {
+    "title": "Prisunion",
+    "link": "https://prisunion.uz",
+    "year": 2024,
+    "github": {
+      "link": null,
+      "repo": null
+    },
+    "technologies": [],
+    "type": "FRONT_END",
+    "value": "softit",
+    "description": "",
+    "images": [
+      "/static/images/jpg/pris-1.jpg",
+      "/static/images/jpg/pris-2.jpg",
+      "/static/images/jpg/pris-3.jpg",
+      "/static/images/jpg/pris-4.jpg",
+      "/static/images/jpg/pris-5-mobile.jpg",
+      "/static/images/jpg/pris-6-mobile.jpg",
+      "/static/images/jpg/pris-7-mobile.jpg"
+    ],
+    "forSale": false
+  },
   "weather-exp": {
     "title": "Weather App",
     "link": null,

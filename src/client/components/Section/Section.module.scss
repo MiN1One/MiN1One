@@ -52,6 +52,8 @@
   .content {
     height: 100%;
     flex-basis: var(--slide-content-max-width);
+    overflow-y: auto;
+    padding-right: 2rem;
 
     &.centerContent {
       max-width: 100%;
@@ -120,6 +122,7 @@
 
     @include respond('tablet') {
       display: flex;
+      width: 0;
     }
   }
 
@@ -177,9 +180,8 @@
 
   .body {
     width: 100%;
-    height: var(--slide-body-height);
-    overflow: auto;
     overflow-x: hidden;
+    overflow-y: hidden;
 
     &::-webkit-scrollbar {
       display: none;

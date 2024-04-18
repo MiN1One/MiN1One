@@ -3,7 +3,6 @@
 .item {
   display: flex;
   color: var(--color-light);
-  width: max-content;
 
   &:not(:last-child) {
     padding-bottom: 5rem;
