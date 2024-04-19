@@ -244,6 +244,26 @@
     ],
     "forSale": false
   },
+  "bundl-with-discount": {
+    "title": "Bundle with Discount",
+    "link": "https://apps.shopify.com/discount-guru",
+    "year": 2023,
+    "github": {
+      "link": null,
+      "repo": null
+    },
+    "technologies": [],
+    "type": "FULL_STACK",
+    "value": "bundl-with-discount",
+    "description": "",
+    "images": [
+      "/static/images/jpg/bundle-1.jpg",
+      "/static/images/jpg/bundle-2.jpg",
+      "/static/images/jpg/bundle-4.jpg",
+      "/static/images/jpg/bundle-3.jpg"
+    ],
+    "forSale": false
+  },
   "upsell-cross-sell": {
     "title": "Upsell Cross Sell",
     "link": "https://apps.shopify.com/upsell-prod",
