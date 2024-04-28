@@ -29,7 +29,7 @@ html {
   }
 
   @include respond('xWide') {
-    font-size: 80%;
+    font-size: 75%;
   }
 
   @include respond('desktop') {
