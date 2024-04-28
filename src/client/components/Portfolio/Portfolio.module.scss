@@ -187,6 +187,8 @@
     }
 
     .title span {
+      font-size: 1.8rem;
+
       @include respond('tablet') {
         font-size: 1.6rem;
       }

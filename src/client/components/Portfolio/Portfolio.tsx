@@ -10,6 +10,8 @@ import { ImageWithLoader } from '../Common/ImageWithLoader';
 import Modal from '../Modal/Modal';
 import classes from './Portfolio.module.scss';
 
+// const ProjectsModalAsync = dynamic(() => import('./ProjectsModal'));
+
 const Portfolio: FC = () => {
   const [activeProject, setActiveProject] = useState<string | null>(null);
   const { data } = useHomeContext();
@@ -52,7 +54,6 @@ const Portfolio: FC = () => {
       );
     });
   }, [data, activeProject]);
-
 
   const projectEls = useMemo(() => {
     return projectKeys.map((key, index) => {
@@ -122,6 +123,9 @@ const Portfolio: FC = () => {
 
   return (
     <div className={classes.portfolio}>
+      {/* {activeProject && (
+        <ProjectsModalAsync activeProject={activeProject} onCloseModal={onCloseModal} />
+      )} */}
       <Modal onClose={onCloseModal} open={!!activeProject}>
         <div className={classes.modalContent} ref={modalContentRef}>
           <div className={classes.imagesList}>

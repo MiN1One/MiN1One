@@ -70,7 +70,7 @@
     },
     "technologies": [],
     "type": "FRONT_END",
-    "value": "softit",
+    "value": "prisunion",
     "description": "",
     "images": [
       "/static/images/jpg/pris-1.jpg",
@@ -80,6 +80,83 @@
       "/static/images/jpg/pris-5-mobile.jpg",
       "/static/images/jpg/pris-6-mobile.jpg",
       "/static/images/jpg/pris-7-mobile.jpg"
+    ],
+    "forSale": false
+  },
+  "bugatchi": {
+    "title": "Bugatchi",
+    "link": "https://bugatchi.com",
+    "year": 2023,
+    "github": {
+      "link": null,
+      "repo": null
+    },
+    "technologies": [],
+    "type": "FULL_STACK",
+    "value": "bugatchi",
+    "description": "",
+    "images": [
+      "/static/images/jpg/bugatchi-1.jpg",
+      "/static/images/jpg/bugatchi-2.jpg",
+      "/static/images/jpg/bugatchi-3-mobile.jpg"
+    ],
+    "forSale": false
+  },
+  "itic": {
+    "title": "ITIC",
+    "link": "https://itic.uz",
+    "year": 2024,
+    "github": {
+      "link": null,
+      "repo": null
+    },
+    "technologies": [],
+    "type": "FULL_STACK",
+    "value": "itic",
+    "description": "",
+    "images": [
+      "/static/images/jpg/itic-1.jpg",
+      "/static/images/jpg/itic-2.jpg",
+      "/static/images/jpg/itic-3-mobile.jpg",
+      "/static/images/jpg/itic-4-mobile.jpg"
+    ],
+    "forSale": false
+  },
+  "wildone": {
+    "title": "Wildone",
+    "link": "https://wildone.com",
+    "year": 2023,
+    "github": {
+      "link": null,
+      "repo": null
+    },
+    "technologies": [],
+    "type": "FRONT_END",
+    "value": "wildone",
+    "description": "",
+    "images": [
+      "/static/images/jpg/wildone-1.jpg",
+      "/static/images/jpg/wildone-2.jpg",
+      "/static/images/jpg/wildone-3-mobile.jpg"
+    ],
+    "forSale": false
+  },
+  "b2b-kassatex": {
+    "title": "B2B Kassatex",
+    "link": "https://b2b.kassatex.com",
+    "year": 2023,
+    "github": {
+      "link": null,
+      "repo": null
+    },
+    "technologies": [],
+    "type": "FRONT_END",
+    "value": "b2b-kassatex",
+    "description": "",
+    "images": [
+      "/static/images/jpg/kassatex-1.jpg",
+      "/static/images/jpg/kassatex-2.jpg",
+      "/static/images/jpg/kassatex-3-mobile.jpg"
     ],
     "forSale": false
   },
@@ -186,63 +263,6 @@
       "/static/images/jpg/project_image_36-mobile.jpg"
     ],
     "forSale": true
-  },
-  "bugatchi": {
-    "title": "Bugatchi",
-    "link": "https://bugatchi.com",
-    "year": 2023,
-    "github": {
-      "link": null,
-      "repo": null
-    },
-    "technologies": [],
-    "type": "FULL_STACK",
-    "value": "bugatchi",
-    "description": "",
-    "images": [
-      "/static/images/jpg/bugatchi-1.jpg",
-      "/static/images/jpg/bugatchi-2.jpg",
-      "/static/images/jpg/bugatchi-3-mobile.jpg"
-    ],
-    "forSale": false
-  },
-  "wildone": {
-    "title": "Wildone",
-    "link": "https://wildone.com",
-    "year": 2023,
-    "github": {
-      "link": null,
-      "repo": null
-    },
-    "technologies": [],
-    "type": "FRONT_END",
-    "value": "wildone",
-    "description": "",
-    "images": [
-      "/static/images/jpg/wildone-1.jpg",
-      "/static/images/jpg/wildone-2.jpg",
-      "/static/images/jpg/wildone-3-mobile.jpg"
-    ],
-    "forSale": false
-  },
-  "b2b-kassatex": {
-    "title": "B2B Kassatex",
-    "link": "https://b2b.kassatex.com",
-    "year": 2023,
-    "github": {
-      "link": null,
-      "repo": null
-    },
-    "technologies": [],
-    "type": "FRONT_END",
-    "value": "b2b-kassatex",
-    "description": "",
-    "images": [
-      "/static/images/jpg/kassatex-1.jpg",
-      "/static/images/jpg/kassatex-2.jpg",
-      "/static/images/jpg/kassatex-3-mobile.jpg"
-    ],
-    "forSale": false
   },
   "bundl-with-discount": {
     "title": "Bundle with Discount",

@@ -25,7 +25,11 @@ html {
   font-size: 62.5%;
 
   @include respond('wide') {
-    font-size: 67.5%;
+    font-size: 70%;
+  }
+
+  @include respond('xWide') {
+    font-size: 80%;
   }
 
   @include respond('desktop') {

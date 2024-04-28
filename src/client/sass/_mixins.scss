@@ -1,4 +1,11 @@
 @mixin respond($breakpoint) {
+  // 2000px
+  @if ($breakpoint == 'xWide') {
+    @media only screen and (min-width: 125em) {
+      @content;
+    }
+  }
+
   // 1600px
   @if ($breakpoint == 'wide') {
     @media only screen and (min-width: 100em) {
