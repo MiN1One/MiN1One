@@ -1,7 +1,6 @@
 import { GlobalContextProvider } from "@client/contexts/GlobalContext";
 import '@client/sass/main.scss';
 import App, { AppContext, AppProps } from "next/app";
-// import 'swiper/css';
 
 const NextApp = ({ Component, pageProps }: AppProps) => {
   return (

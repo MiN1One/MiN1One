@@ -10,8 +10,6 @@ import { ImageWithLoader } from '../Common/ImageWithLoader';
 import Modal from '../Modal/Modal';
 import classes from './Portfolio.module.scss';
 
-// const ProjectsModalAsync = dynamic(() => import('./ProjectsModal'));
-
 const Portfolio: FC = () => {
   const [activeProject, setActiveProject] = useState<string | null>(null);
   const { data } = useHomeContext();

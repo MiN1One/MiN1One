@@ -73,22 +73,15 @@
     margin: 0 auto;
     max-width: var(--modal-content-max-width);
     padding-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
   }
 
   .modalContent {
     height: 100%;
     width: 100%;
     overflow-y: auto;
-
-    .figure {
-      background: none;
-      padding: initial;
-      padding-bottom: 60%;
-
-      &:not(:last-child) {
-        margin-bottom: 2rem;
-      }
-    }
 
     img {
       height: auto;
