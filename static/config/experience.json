@@ -1,9 +1,20 @@
 {
+  "amcbridge": {
+    "company": "AMC Bridge",
+    "value": "amcbridge",
+    "from": "2024-06-19T19:00:00.000Z",
+    "to": null,
+    "responsibilities": "",
+    "role": "Software Engineer",
+    "location": "Tashkent, Uzbekistan",
+    "mode": "hybrid",
+    "website": "amcbridge.com"
+  },
   "llama": {
     "company": "Llama Commerce LLC",
     "value": "llama",
     "from": "2021-06-30T19:00:00.000Z",
-    "to": null,
+    "to": "2024-06-10T19:00:00.000Z",
     "responsibilities": "Developing and maintaining Shopify based online stores. Developing and deploying AI-powered solutions. Assisting newcomer developers in getting started with company tech-stack. Developing Shopify applications and extensions (client-side, post-purchase, functions API, checkout UI).  Developing custom middlewares using Storefont and Admin APIs. Third-party service integrations.  Creating responsive UIs modular components.  Developing and maintaining headless applications.  Creating project workflows, scripts and setting up CI/CD.  Analyzing and optimizing product performance, structure and design. Estimating and setting right deadlines.",
     "role": "JavaScript Engineer",
     "location": "Tashkent, Uzbekistan",

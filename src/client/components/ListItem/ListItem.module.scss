@@ -80,7 +80,9 @@
   }
 
   .titleGroup {
-    margin-bottom: 3rem;
+    &:not(:only-child) {
+      margin-bottom: 3rem;
+    }
 
     & > *:not(:last-child) {
       margin-bottom: 0.5rem;

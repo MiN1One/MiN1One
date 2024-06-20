@@ -1,7 +1,9 @@
 {
   "email": {
     "value": "email",
-    "items": ["nodirbek@llamacommerce.io", "nodirbekulashev01@gmail.com"],
+    "items": [
+      "nodirbekulashev01@gmail.com"
+    ],
     "title": "My Email"
   }
 }

@@ -26,6 +26,7 @@ import LlamaLogo from './LlamaLogo';
 import { NxjsLogo } from './NxjsLogo';
 import { OpenAiLogo } from './OpenAiLogo';
 import WebsterLogo from './WebsterLogo';
+import { AmcBridgeLogo } from './AmcBridgeLogo';
 
 type ElementsRecord = Record<string, React.ComponentType>;
 
@@ -62,6 +63,7 @@ export const experienceIconsMap: ElementsRecord = {
   llama: LlamaLogo,
   freelance: RiCompasses2Line,
   webster: WebsterLogo,
+  amcbridge: AmcBridgeLogo
 };
 
 export const miscUiIconsMap: ElementsRecord = {

@@ -22,7 +22,9 @@ const Experience: FC = () => {
   const expereinceEls = useMemo(() => {
     return experienceKeys.map(key => {
       const experienceItem = data.experience[key] as IExperienceData;
-      const responsibilitiesArr = experienceItem.responsibilities.split('. ') as string[];
+      const responsibilitiesArr = experienceItem.responsibilities.length
+        ? experienceItem.responsibilities.split('. ')
+        : [];
       const from = moment(experienceItem.from);
       const to = moment(experienceItem.to || undefined);
       let months = to.diff(from, 'months') + 1, years: number;
